@@ -11,6 +11,7 @@ import './i18n';
 import gsap from 'gsap';
 import { ScrollSmoother, ScrollTrigger, ScrollToPlugin } from 'gsap/all';
 import { useGSAP } from '@gsap/react';
+import { jobs } from './constant';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, ScrollSmoother);
 
@@ -26,29 +27,27 @@ function App() {
       effects: true,
     });
 
-    gsap.from('#about', {
-      scrollTrigger: {
-        trigger: '#about',
-        scrub: true,
-        start: 'top bottom',
-        end: 'top top',
-      },
-      scaleX: 0,
-      transformOrigin: 'left center',
-      ease: 'none',
-    });
-
-    gsap.to('.path', {
-      scrollTrigger: {
-        trigger: '#works',
-        scrub: true,
-        pin: true,
-        // start: "center center",
-        // end: "+=1000px",
-      },
-      xPercent: -75,
-      ease: 'none',
-    });
+    // gsap.from('#about', {
+    //   scrollTrigger: {
+    //     trigger: '#about',
+    //     scrub: true,
+    //     start: 'top bottom',
+    //     end: 'top top',
+    //   },
+    //   scaleX: 0,
+    //   transformOrigin: 'left center',
+    //   ease: 'none',
+    // });
+    //   gsap.to('.path', {
+    //     scrollTrigger: {
+    //       trigger: '#works',
+    //       scrub: true,
+    //       pin: true,
+    //       snap: 1 / (jobs.length - 1),
+    //     },
+    //     xPercent: -83.33,
+    //     ease: 'none',
+    //   });
   }, {});
 
   const scrollTo = (location: string) => {
