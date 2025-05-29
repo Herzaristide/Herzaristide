@@ -14,7 +14,7 @@
   "orange": {
     "type": "apprenticeship",
     "role": "Data engineer",
-    "company": "orange",
+    "company": "Orange",
     "description": "Development and deployment of an ETL pipeline with volumetric and processing speed constraints. Team of five peoples in agile SCRUM."
   },
   "adeo": {
@@ -27,6 +27,12 @@
     "type": "internship",
     "role": "Software developer",
     "company": "Enedis",
+    "description": ""
+  },
+  "isen": {
+    "type": "formation",
+    "role": "Student",
+    "company": "ISEN",
     "description": ""
   }
 }
