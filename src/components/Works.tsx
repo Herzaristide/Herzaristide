@@ -9,7 +9,7 @@ const Works = () => {
   useGSAP(() => {
     const jobSections = gsap.utils.toArray('.job_section');
 
-    const scrollTween = gsap.to(jobSections, {
+    gsap.to(jobSections, {
       xPercent: -100 * (jobSections.length - 1),
       ease: 'none',
       scrollTrigger: {
@@ -33,7 +33,7 @@ const Works = () => {
       <div className='flex items-center h-full'>
         {jobs.map((job) => (
           <div
-            id={job}
+            key={job}
             className='job_section w-screen h-1/2 p-8'
             onClick={() => {
               setSetselectedJob(job);

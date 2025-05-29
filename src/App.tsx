@@ -11,7 +11,6 @@ import './i18n';
 import gsap from 'gsap';
 import { ScrollSmoother, ScrollTrigger, ScrollToPlugin } from 'gsap/all';
 import { useGSAP } from '@gsap/react';
-import { jobs } from './constant';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, ScrollSmoother);
 
