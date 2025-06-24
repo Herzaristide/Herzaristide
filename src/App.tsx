@@ -25,28 +25,6 @@ function App() {
       smooth: 2,
       effects: true,
     });
-
-    // gsap.from('#about', {
-    //   scrollTrigger: {
-    //     trigger: '#about',
-    //     scrub: true,
-    //     start: 'top bottom',
-    //     end: 'top top',
-    //   },
-    //   scaleX: 0,
-    //   transformOrigin: 'left center',
-    //   ease: 'none',
-    // });
-    //   gsap.to('.path', {
-    //     scrollTrigger: {
-    //       trigger: '#works',
-    //       scrub: true,
-    //       pin: true,
-    //       snap: 1 / (jobs.length - 1),
-    //     },
-    //     xPercent: -83.33,
-    //     ease: 'none',
-    //   });
   }, {});
 
   const scrollTo = (location: string) => {

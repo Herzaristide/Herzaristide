@@ -2,12 +2,8 @@ import { LuSun, LuMoon } from 'react-icons/lu';
 import Languages from './Languages';
 import type { SetStateAction, Dispatch } from 'react';
 import { links } from '../constant';
-import { useGSAP } from '@gsap/react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/all';
 import IconButton from './IconButton';
-
-gsap.registerPlugin(ScrollTrigger);
+import { useState } from 'react';
 
 const Navigation = ({
   dark,
@@ -18,42 +14,36 @@ const Navigation = ({
   setDark: Dispatch<SetStateAction<string>>;
   scrollTo: (location: string) => void;
 }) => {
-  useGSAP(() => {
-    const showAnim = gsap
-      .from('#nav', {
-        yPercent: -100,
-        paused: true,
-        duration: 0.2,
-      })
-      .progress(1);
-
-    ScrollTrigger.create({
-      start: 'top top',
-      end: 'max',
-      onUpdate: (self) => {
-        self.direction === -1 ? showAnim.play() : showAnim.reverse();
-      },
-    });
-  });
+  const [visible, setVisible] = useState(false);
 
   return (
-    <section
-      id='nav'
-      className='mt-4 bg-gradient-to-r from-[#282828]/75 to-[#0F0F0F]/75 flex justify-center items-center fixed z-10 rounded-full'
-    >
-      {links.map((link) => {
-        return <IconButton title={link} onClick={() => scrollTo(`#${link}`)} />;
-      })}
+    <>
+      <div
+        className='fixed top-0 left-0 h-screen w-3 z-20'
+        onMouseEnter={() => setVisible(true)}
+      />
+      <section
+        id='nav'
+        className={`left-0 top-0 h-screen w-20 bg-gradient-to-b from-[#282828]/75 to-[#0F0F0F]/75 flex flex-col justify-center items-center fixed z-30 rounded-r-3xl shadow-lg transition-transform duration-300 ${
+          visible ? 'translate-x-0' : '-translate-x-full'
+        }`}
+        style={{ position: 'fixed' }}
+        onMouseLeave={() => setVisible(false)}
+      >
+        {links.map((link) => (
+          <IconButton key={link} title={link} onClick={() => scrollTo(`#${link}`)} />
+        ))}
 
-      <div className='rounded-xl'>
-        {dark ? (
-          <IconButton title='dark' onClick={() => setDark('')} />
-        ) : (
-          <IconButton title='light' onClick={() => setDark('dark')} />
-        )}
-      </div>
-      <Languages />
-    </section>
+        <div className='rounded-xl mt-4'>
+          {dark ? (
+            <IconButton title='dark' onClick={() => setDark('')} />
+          ) : (
+            <IconButton title='light' onClick={() => setDark('dark')} />
+          )}
+        </div>
+        {/* <Languages /> */}
+      </section>
+    </>
   );
 };
 
