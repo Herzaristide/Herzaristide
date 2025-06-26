@@ -86,7 +86,6 @@ const Projects = () => {
               title={project.title}
               description={project.description}
               technologies={project.technologies}
-              image={project.image}
               githubUrl={project.githubUrl}
               liveUrl={project.liveUrl}
               index={index}

@@ -6,15 +6,19 @@ import { useRef, useState } from 'react';
 
 const Works = () => {
   const { t } = useTranslation();
-  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  // const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
   const [flipped, setFlipped] = useState<number | null>(null);
 
   // Gather all missions from all jobs
   const allMissions = jobs.flatMap((job) => {
-    const jobData = t(`works:${job}`, { returnObjects: true });
-    if (Array.isArray(jobData.missions)) {
-      return jobData.missions.map((mission) => ({
+    const jobData = t(`works:${job}`, { returnObjects: true }) as any;
+    if (
+      jobData &&
+      typeof jobData === 'object' &&
+      Array.isArray(jobData.missions)
+    ) {
+      return jobData.missions.map((mission: any) => ({
         ...mission,
         jobRole: jobData.role,
         jobCompany: jobData.company,
@@ -78,7 +82,7 @@ const Works = () => {
         {allMissions.map((mission, idx) => (
           <div
             key={idx}
-            ref={(el) => (cardRefs.current[idx] = el)}
+            // ref={(el) => (cardRefs.current[idx] = el)}
             className='job_section w-screen h-full p-8 flex items-center justify-center perspective-1000 relative'
           >
             {/* Background gradient for each card */}
@@ -178,7 +182,7 @@ const Works = () => {
                         Key Responsibilities
                       </h4>
                       <ul className='space-y-2'>
-                        {mission.tasks.map((task, i) => (
+                        {mission.tasks.map((task: string, i: number) => (
                           <li
                             key={i}
                             className='flex items-start gap-3 text-white/90 leading-relaxed'
@@ -198,7 +202,7 @@ const Works = () => {
                           Technologies & Skills
                         </h4>
                         <div className='flex flex-wrap gap-3'>
-                          {mission.skills.map((skill, i) => (
+                          {mission.skills.map((skill: string, i: number) => (
                             <span
                               key={i}
                               className='px-4 py-2 bg-white/20 text-white rounded-full text-sm font-medium border border-white/30 hover:bg-white/30 transition-colors duration-300'
