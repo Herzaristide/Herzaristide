@@ -150,7 +150,9 @@ const Resume = () => {
           className={`relative transform transition-all duration-1000 delay-500 ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
           }`}
-        >          <div
+        >
+          {' '}
+          <div
             className={`relative bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden border border-gray-200 dark:border-gray-700 transition-all duration-500 ${
               isFullscreen
                 ? 'fixed inset-4 z-50 rounded-xl'
@@ -168,10 +170,10 @@ const Resume = () => {
                 </div>
               </div>
             )}
-
             {/* Fullscreen close button */}
             {isFullscreen && (
               <button
+                title='fullscreen'
                 onClick={handleFullscreen}
                 className='absolute top-4 right-4 z-20 p-2 bg-black/50 hover:bg-black/70 text-white rounded-full transition-colors duration-300'
               >
@@ -189,14 +191,14 @@ const Resume = () => {
                   />
                 </svg>
               </button>
-            )}            {/* Resume embed */}
+            )}{' '}
+            {/* Resume embed */}
             <embed
               src={`${CV}#toolbar=0&navpanes=0&scrollbar=0&zoom=page-fit`}
               className='w-full h-full rounded-2xl'
               type='application/pdf'
               onLoad={() => setIsLoaded(true)}
             />
-
             {/* Fallback for browsers that don't support embed */}
             <div className='absolute inset-0 flex items-center justify-center bg-gray-50 dark:bg-gray-800 opacity-0 pointer-events-none'>
               <div className='text-center p-8'>
@@ -228,7 +230,6 @@ const Resume = () => {
               </div>
             </div>
           </div>
-
           {/* Resume stats */}
           <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 max-w-4xl mx-auto'>
             <div className='text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-shadow duration-300'>

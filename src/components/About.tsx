@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import { useState, useEffect, useRef } from 'react';
-import Button from './Button';
 
 const About = () => {
   const { t } = useTranslation();

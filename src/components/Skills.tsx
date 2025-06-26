@@ -19,7 +19,7 @@ const Skills = () => {
   ];
 
   return (
-    <section id='skills' className='relative h-dvh w-screen overflow-hidden'>
+    <section id='skills' className='relative h-full w-screen'>
       {/* Animated background gradient */}
       <div className='absolute inset-0 bg-gradient-to-br from-green/5 via-transparent to-green/10 animate-pulse'></div>
 

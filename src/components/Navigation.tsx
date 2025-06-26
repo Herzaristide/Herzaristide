@@ -2,8 +2,7 @@ import { LuSun, LuMoon } from 'react-icons/lu';
 import Languages from './Languages';
 import type { SetStateAction, Dispatch } from 'react';
 import { links } from '../constant';
-import IconButton from './IconButton';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const Navigation = ({
   dark,
@@ -15,26 +14,7 @@ const Navigation = ({
   scrollTo: (location: string) => void;
 }) => {
   const [visible, setVisible] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
-  // Track active section based on scroll position
-  useEffect(() => {
-    // Disable native scroll tracking when using GSAP ScrollSmoother
-    // The active section tracking is disabled to avoid conflicts with GSAP
-    // const handleScroll = () => {
-    //   const sections = links.map(link => document.getElementById(link));
-    //   const scrollPosition = window.scrollY + window.innerHeight / 2;
-    //   for (let i = sections.length - 1; i >= 0; i--) {
-    //     const section = sections[i];
-    //     if (section && section.offsetTop <= scrollPosition) {
-    //       setActiveSection(links[i]);
-    //       break;
-    //     }
-    //   }
-    // };
-    // window.addEventListener('scroll', handleScroll);
-    // handleScroll(); // Initial check
-    // return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const [activeSection] = useState('home');
 
   return (
     <>
@@ -117,10 +97,8 @@ const Navigation = ({
               </div>
             ))}
           </div>
-
           {/* Divider */}
           <div className='w-8 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent mb-6'></div>
-
           {/* Theme toggle */}
           <div
             className={`relative group transform transition-all duration-300 ${
@@ -149,17 +127,15 @@ const Navigation = ({
               </div>
             </button>
           </div>
-
-          {/* Languages component placeholder */}
+          {/* Languages component */}
           <div
             className={`mt-6 transform transition-all duration-300 ${
               visible ? 'translate-x-0 opacity-100' : 'translate-x-4 opacity-0'
             }`}
             style={{ transitionDelay: `${(links.length + 1) * 50}ms` }}
           >
-            {/* <Languages /> */}
+            <Languages />
           </div>
-
           {/* Bottom decorative element */}
           <div className='absolute bottom-6 left-1/2 -translate-x-1/2'>
             <div className='w-1 h-8 bg-gradient-to-t from-green to-transparent rounded-full opacity-50'></div>

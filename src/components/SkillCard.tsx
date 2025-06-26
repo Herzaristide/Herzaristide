@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const SkillCard = ({ skill, index }: { skill: any; index: number }) => {
+const SkillCard = ({ skill, index }: { skill: string; index: number }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleClick = () => {
