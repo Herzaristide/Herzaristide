@@ -17,28 +17,27 @@ gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, ScrollSmoother);
 function App() {
   const [dark, setDark] = useState<string>('');
   const smoother = useRef<ScrollSmoother | null>(null);
-
   useGSAP(() => {
     smoother.current = ScrollSmoother.create({
-      wrapper: '#main',
+      wrapper: '#wrapper',
       content: '#content',
       smooth: 2,
       effects: true,
     });
   }, {});
-
   const scrollTo = (location: string) => {
-    smoother.current?.scrollTo(location, true, 'center center');
+    if (smoother.current) {
+      smoother.current.scrollTo(location, true, 'top top');
+    }
   };
-
   return (
-    <main className='relative w-screen flex justify-center ' id='wrapper'>
+    <div id='wrapper'>
       <Navigation dark={dark} setDark={setDark} scrollTo={scrollTo} />
-      <div
+      <main
         id='content'
         className={`${
           dark ? 'dark' : ''
-        } bg-white dark:bg-black  dark:text-white text-black`}
+        } bg-white dark:bg-black dark:text-white text-black`}
       >
         <Home />
         <About />
@@ -47,8 +46,8 @@ function App() {
         <Projects />
         <Resume />
         <Contacts />
-      </div>
-    </main>
+      </main>
+    </div>
   );
 }
 
