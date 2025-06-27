@@ -37,6 +37,7 @@
 <div align="center">
 
 ### **🛠️ Languages & Frameworks**
+
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
@@ -44,16 +45,19 @@
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 
 ### **🎨 Styling & UI**
+
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white)
 
 ### **📊 Data Engineering**
+
 ![Apache Kafka](https://img.shields.io/badge/Apache_Kafka-231F20?style=for-the-badge&logo=apache-kafka&logoColor=white)
 ![Apache Spark](https://img.shields.io/badge/Apache_Spark-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white)
 ![Hadoop](https://img.shields.io/badge/Hadoop-66CCFF?style=for-the-badge&logo=apache-hadoop&logoColor=black)
 
 ### **🚀 DevOps & Tools**
+
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
@@ -86,6 +90,7 @@
 <div align="center">
 
 ### 🌟 **Interactive Portfolio Website**
+
 [![Portfolio Repo](https://github-readme-stats.vercel.app/api/pin/?username=herzaristide&repo=Herzaristide&theme=radical&hide_border=true&bg_color=0D1117&title_color=53dd75&icon_color=53dd75&text_color=ffffff)](https://github.com/herzaristide/Herzaristide)
 
 **Modern React portfolio with 3D animations, internationalization, and responsive design**
@@ -101,6 +106,7 @@
 <td width="50%">
 
 ### 📊 **Data Engineering**
+
 - Building robust data pipelines with **Apache Kafka** & **Spark**
 - Processing large-scale datasets with **Hadoop** ecosystem
 - Creating real-time streaming solutions
@@ -110,6 +116,7 @@
 <td width="50%">
 
 ### 💻 **Full Stack Development**
+
 - Modern web applications with **React** & **TypeScript**
 - Responsive UI/UX with **Tailwind CSS**
 - Server-side development with **Node.js**
@@ -154,7 +161,7 @@ I'm always open to interesting conversations and collaboration opportunities!
 
 ---
 
-*"Transforming data into insights, and ideas into digital experiences"*
+_"Transforming data into insights, and ideas into digital experiences"_
 
 ⭐ **Star my repositories if you find them helpful!**
 
