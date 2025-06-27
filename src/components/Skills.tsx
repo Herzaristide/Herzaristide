@@ -1,23 +1,7 @@
 import SkillCard from './SkillCard';
+import { skills } from '../constant';
 
 const Skills = () => {
-  const skills = [
-    'react',
-    'javascript',
-    'python',
-    'kafka',
-    'git',
-    'flutter',
-    'kubernetes',
-    'docker',
-    'spark',
-    'tailwind_css',
-    'nodejs',
-    'hadoop',
-    'next',
-    'flink',
-  ];
-
   return (
     <section id='skills' className='relative h-full w-screen'>
       {/* Animated background gradient */}
@@ -41,14 +25,14 @@ const Skills = () => {
         <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-6 max-w-6xl'>
           {skills.map((skill, index) => (
             <div
-              key={skill}
+              key={skill.name}
               className='transform transition-all duration-500 hover:scale-110 hover:-translate-y-2'
               style={{
                 animationDelay: `${index * 0.1}s`,
                 animation: 'fadeInUp 0.6s ease-out forwards',
               }}
             >
-              <SkillCard skill={skill} index={index} />
+              <SkillCard skill={skill.name} score={skill.score} />
             </div>
           ))}
         </div>

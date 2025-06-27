@@ -1,3 +1,4 @@
+import { contactsUrl } from '../constant';
 import ProjectCard from './ProjectCard';
 
 const Projects = () => {
@@ -100,7 +101,7 @@ const Projects = () => {
               Want to see more projects?
             </span>
             <a
-              href='https://github.com/yourusername'
+              href={contactsUrl.github}
               target='_blank'
               rel='noopener noreferrer'
               className='text-green hover:text-green/80 transition-colors duration-300 font-semibold'

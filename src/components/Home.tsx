@@ -1,5 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useState, useEffect } from 'react';
+import { skills } from '../constant';
+import HomeSkillButton from './HomeSkillButton';
 
 const Home = () => {
   const { t } = useTranslation();
@@ -90,27 +92,16 @@ const Home = () => {
 
         {/* Tech stack buttons with staggered animation */}
         <div className='flex flex-wrap gap-3 mb-8'>
-          {['React', 'JavaScript', 'Python'].map((tech, index) => (
-            <div
-              key={tech}
-              className={`transform transition-all duration-700 ${
-                isVisible
-                  ? 'translate-y-0 opacity-100'
-                  : 'translate-y-4 opacity-0'
-              }`}
-              style={{ transitionDelay: `${800 + index * 150}ms` }}
-            >
-              <div className='group relative'>
-                {/* Glowing effect */}
-                <div className='absolute -inset-0.5 bg-gradient-to-r from-green to-green/50 rounded-full blur opacity-0 group-hover:opacity-30 transition duration-300'></div>
-
-                {/* Enhanced button */}
-                <div className='relative bg-green hover:bg-green/80 text-white font-semibold px-6 py-3 rounded-full border-2 border-green hover:border-green/60 cursor-pointer transform hover:scale-105 hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-green/25'>
-                  <span className='relative z-10'>{tech}</span>
-                </div>
-              </div>
-            </div>
-          ))}
+          {skills
+            .filter((skill) => skill.favorite)
+            .map((skill, index) => (
+              <HomeSkillButton
+                key={skill.name}
+                skill={skill}
+                index={index}
+                isVisible={isVisible}
+              />
+            ))}
         </div>
 
         {/* Call to action section */}

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { getIcon } from '../utils/iconImports';
 
-const SkillCard = ({ skill, index }: { skill: string; index: number }) => {
+const SkillCard = ({ skill, score }: { skill: string; score: number }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleClick = () => {
@@ -39,13 +39,13 @@ const SkillCard = ({ skill, index }: { skill: string; index: number }) => {
           <div className='absolute inset-0 bg-gradient-to-t from-green/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl'></div>
         </div>
 
-        {/* Back side - Number */}
+        {/* Back side - Random Number */}
         <div className='absolute inset-0 bg-gradient-to-br from-green/20 to-green/10 backdrop-blur-sm rounded-2xl border-2 border-green p-6 flex flex-col justify-center items-center transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg group-hover:shadow-green/25 backface-hidden rotate-y-180'>
           <div className='text-4xl sm:text-5xl font-bold text-green animate-pulse'>
-            {index + 1}
+            {score}
           </div>
           <div className='text-xs mt-2 font-medium text-center text-green/70'>
-            Skill #{index + 1}
+            Lucky #{score}
           </div>
 
           {/* Decorative elements */}

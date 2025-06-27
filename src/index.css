@@ -120,6 +120,24 @@ body {
   transform: rotateY(180deg);
 }
 
+/* Auto-scroll animation for skills */
+@keyframes scroll-slow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-slow {
+  animation: scroll-slow 30s linear infinite;
+}
+
+.animate-scroll-slow:hover {
+  animation-play-state: paused;
+}
+
 /* Smooth transitions for all interactive elements */
 /* * {
   transition-property: color, background-color, border-color,

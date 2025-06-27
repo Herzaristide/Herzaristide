@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { contactsUrl } from '../constant';
 
 const Contacts = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -61,8 +62,8 @@ const Contacts = () => {
         </svg>
       ),
       title: 'Email',
-      value: 'aristide.pichereau@example.com',
-      href: 'mailto:aristide.pichereau@example.com',
+      value: contactsUrl.email,
+      href: contactsUrl.email,
       description: 'Send me an email for professional inquiries',
     },
     {
@@ -82,7 +83,7 @@ const Contacts = () => {
         </svg>
       ),
       title: 'Phone',
-      value: '+33 6 XX XX XX XX',
+      value: contactsUrl.phone,
       href: 'tel:+33600000000',
       description: 'Call me for urgent matters',
     },
@@ -93,8 +94,8 @@ const Contacts = () => {
         </svg>
       ),
       title: 'LinkedIn',
-      value: 'linkedin.com/in/aristide-pichereau',
-      href: 'https://linkedin.com/in/aristide-pichereau',
+      value: contactsUrl.linkedin,
+      href: contactsUrl.linkedin,
       description: 'Connect with me professionally',
     },
     {
@@ -104,8 +105,8 @@ const Contacts = () => {
         </svg>
       ),
       title: 'GitHub',
-      value: 'github.com/aristide-pichereau',
-      href: 'https://github.com/aristide-pichereau',
+      value: contactsUrl.github,
+      href: contactsUrl.github,
       description: 'Check out my code repositories',
     },
   ];

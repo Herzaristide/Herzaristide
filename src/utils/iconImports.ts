@@ -20,6 +20,8 @@ import skillsIcon from '../assets/icons/skills.svg';
 import sparkIcon from '../assets/icons/spark.svg';
 import translateIcon from '../assets/icons/translate.svg';
 import worksIcon from '../assets/icons/works.svg';
+import typescriptIcon from '../assets/icons/typescript.svg';
+import tailwindIcon from '../assets/icons/tailwind.svg';
 
 export const iconMap: Record<string, string> = {
   about: aboutIcon,
@@ -43,6 +45,8 @@ export const iconMap: Record<string, string> = {
   spark: sparkIcon,
   translate: translateIcon,
   works: worksIcon,
+  typescript: typescriptIcon,
+  tailwind: tailwindIcon,
 };
 
 export const getIcon = (iconName: string): string => {
