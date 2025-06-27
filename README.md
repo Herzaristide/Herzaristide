@@ -18,22 +18,6 @@
 
 ---
 
-<div align="center" style="margin: 40px 0;">
-
-## 🌐 **Interactive Portfolio Preview**
-
-<div style="position: relative; border: 3px solid #53dd75; border-radius: 15px; box-shadow: 0 20px 40px rgba(83, 221, 117, 0.3); overflow: hidden; background: linear-gradient(45deg, rgba(83, 221, 117, 0.1), rgba(83, 221, 117, 0.05));">
-  
-  <iframe 
-    src="https://herzaristide.vercel.app/" 
-    width="100%" 
-    height="600" 
-    frameborder="0"
-    style="border-radius: 12px;">
-  </iframe>
-  
-</div>
-
 **✨ Explore my full interactive experience**
 
 [![🔗 Visit Portfolio](https://img.shields.io/badge/🔗_Visit_Full_Website-53dd75?style=for-the-badge&labelColor=1a1a1a&color=53dd75)](https://herzaristide.github.io/Herzaristide/)
@@ -49,6 +33,7 @@
 <div style="background: linear-gradient(135deg, rgba(83, 221, 117, 0.1), rgba(83, 221, 117, 0.05)); padding: 30px; border-radius: 15px; border: 1px solid rgba(83, 221, 117, 0.2); margin: 20px 0;">
 
 ### 🛠️ **Languages & Frameworks**
+
 <div style="margin: 15px 0;">
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB&labelColor=1a1a1a)
@@ -60,6 +45,7 @@
 </div>
 
 ### 🎨 **Styling & UI**
+
 <div style="margin: 15px 0;">
 
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white&labelColor=1a1a1a)
@@ -69,6 +55,7 @@
 </div>
 
 ### 📊 **Data Engineering**
+
 <div style="margin: 15px 0;">
 
 ![Apache Kafka](https://img.shields.io/badge/Apache_Kafka-231F20?style=for-the-badge&logo=apache-kafka&logoColor=white&labelColor=1a1a1a)
@@ -78,6 +65,7 @@
 </div>
 
 ### 🚀 **DevOps & Tools**
+
 <div style="margin: 15px 0;">
 
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white&labelColor=1a1a1a)
@@ -148,6 +136,7 @@
 <div style="background: linear-gradient(135deg, rgba(83, 221, 117, 0.1), rgba(83, 221, 117, 0.05)); padding: 25px; border-radius: 15px; border: 1px solid rgba(83, 221, 117, 0.2);">
 
 ### 📊 **Data Engineering**
+
 <div style="color: #53dd75; margin: 15px 0;">
   ⚡ Building robust data pipelines with **Apache Kafka** & **Spark**<br/>
   🔄 Processing large-scale datasets with **Hadoop** ecosystem<br/>
@@ -160,6 +149,7 @@
 <div style="background: linear-gradient(135deg, rgba(83, 221, 117, 0.1), rgba(83, 221, 117, 0.05)); padding: 25px; border-radius: 15px; border: 1px solid rgba(83, 221, 117, 0.2);">
 
 ### 💻 **Full Stack Development**
+
 <div style="color: #53dd75; margin: 15px 0;">
   ⚛️ Modern web applications with **React** & **TypeScript**<br/>
   🎨 Responsive UI/UX with **Tailwind CSS**<br/>
