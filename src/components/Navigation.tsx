@@ -3,6 +3,7 @@ import Languages from './Languages';
 import type { SetStateAction, Dispatch } from 'react';
 import { links } from '../constant';
 import { useState } from 'react';
+import { getIcon } from '../utils/iconImports';
 
 const Navigation = ({
   dark,
@@ -78,7 +79,7 @@ const Navigation = ({
                 >
                   <img
                     className='h-6 w-6 transition-all duration-300 group-hover:scale-110'
-                    src={`Herzaristide/src/assets/icons/${link}.svg`}
+                    src={getIcon(link)}
                     alt={link}
                     style={{
                       filter:

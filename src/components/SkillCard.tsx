@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { getIcon } from '../utils/iconImports';
 
 const SkillCard = ({ skill, index }: { skill: string; index: number }) => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -23,7 +24,7 @@ const SkillCard = ({ skill, index }: { skill: string; index: number }) => {
           {/* Icon */}
           <div className='transform transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110'>
             <img
-              src={`Herzaristide/src/assets/icons/${skill}.svg`}
+              src={getIcon(skill)}
               alt={skill}
               className='w-8 h-8 sm:w-10 sm:h-10 filter group-hover:drop-shadow-lg'
             />
