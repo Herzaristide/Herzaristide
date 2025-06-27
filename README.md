@@ -1,8 +1,20 @@
-# 🚀 Aristide Pichereau - Portfolio V2
+# 👋 Hi, I'm Aristide Pichereau
 
-A modern, interactive portfolio website showcasing my skills as a **Data Engineer & Full Stack Developer**. Built with cutting-edge technologies and featuring smooth animations, 3D effects, and responsive design.
+## 🚀 Data Engineer & Full Stack Developer
 
-## 🌐 Live Demo
+> Passionate about creating innovative solutions that bridge the gap between **data science** and **web development**.
+
+<div align="center">
+
+[![Website](https://img.shields.io/badge/🌐_Website-Live-53dd75?style=for-the-badge)](https://herzaristide.vercel.app/)
+[![LinkedIn](https://img.shields.io/badge/💼_LinkedIn-Connect-0077b5?style=for-the-badge)](https://linkedin.com/in/aristide-pichereau)
+[![Email](https://img.shields.io/badge/📧_Email-Contact-red?style=for-the-badge)](mailto:your.email@example.com)
+
+</div>
+
+---
+
+## 🌐 My Portfolio - Interactive Preview
 
 <div align="center">
   <iframe 
@@ -13,245 +25,137 @@ A modern, interactive portfolio website showcasing my skills as a **Data Enginee
     style="border: 2px solid #53dd75; border-radius: 12px; box-shadow: 0 10px 30px rgba(83, 221, 117, 0.3);">
   </iframe>
   
-  **👆 Interactive preview of the live website**
+  **👆 Explore my interactive portfolio**
   
   [🔗 **Visit Full Website**](https://herzaristide.github.io/Herzaristide/)
 </div>
 
-## ✨ Features
-
-### 🎨 **Modern UI/UX**
-
-- **Dark/Light Mode** toggle with smooth transitions
-- **Responsive Design** that works on all devices
-- **3D Card Flip Animations** for interactive work experience cards
-- **Smooth Scrolling** and parallax effects
-- **Floating Particles** and geometric animations
-
-### 🌍 **Internationalization**
-
-- **Multi-language Support** (English, French, German)
-- **Dynamic Content Translation** using react-i18next
-- **Language Switcher** with smooth transitions
-
-### 🎯 **Interactive Sections**
-
-#### 🏠 **Home**
-
-- Animated hero section with staggered text animations
-- **Skill buttons** with icons and hover effects
-- Gradient text effects and floating background elements
-
-#### 👨‍💻 **About**
-
-- Personal introduction with smooth reveal animations
-- Professional journey overview
-
-#### 💼 **Work Experience**
-
-- **Horizontal scrolling** work cards with GSAP animations
-- **3D flip cards** revealing detailed project information
-- **Auto-scrolling skills** showcase for each role
-- Timeline of professional experiences
-
-#### 🛠️ **Skills**
-
-- **Interactive skill cards** with flip animations
-- **Random numbers** displayed on card flip
-- **Categorized technologies** with proficiency indicators
-
-#### 📋 **Resume**
-
-- Downloadable PDF resume
-- Professional experience highlights
-
-#### 📞 **Contact**
-
-- Contact form with validation
-- Social media links
-- Professional contact information
-
-### ⚡ **Performance & Animations**
-
-- **GSAP (GreenSock)** for smooth, professional animations
-- **CSS-based animations** for optimal performance
-- **Lazy loading** and optimized assets
-- **Auto-scrolling elements** with pause on hover
-
-## 🛠️ Tech Stack
-
-### **Frontend Framework**
-
-- **React 19** - Latest React with modern features
-- **TypeScript** - Type-safe development
-- **Vite** - Lightning-fast build tool
-
-### **Styling & UI**
-
-- **Tailwind CSS 4** - Utility-first CSS framework
-- **Custom CSS animations** - Smooth transitions and effects
-- **Responsive design** - Mobile-first approach
-
-### **Animation Libraries**
-
-- **GSAP (GreenSock)** - Professional animation library
-- **CSS Keyframes** - Lightweight animations
-- **React Transitions** - Component state animations
-
-### **Internationalization**
-
-- **react-i18next** - Complete i18n solution
-- **JSON translation files** - Organized content management
-
-### **Development Tools**
-
-- **ESLint** - Code linting and formatting
-- **TypeScript** - Static type checking
-- **Git** - Version control
-
-### **Deployment**
-
-- **GitHub Pages** - Free hosting with custom domain
-- **GitHub Actions** - Automated deployment pipeline
-
-## 🚀 Getting Started
-
-### Prerequisites
-
-- **Node.js** (v18 or higher)
-- **npm** or **yarn**
-
-### Installation
-
-1. **Clone the repository**
-
-```bash
-git clone https://github.com/herzaristide/Herzaristide.git
-cd Herzaristide
-```
-
-2. **Install dependencies**
-
-```bash
-npm install
-```
-
-3. **Start development server**
-
-```bash
-npm run dev
-```
-
-4. **Open your browser**
-   Navigate to `http://localhost:5173`
-
-## 📦 Available Scripts
-
-| Command           | Description                      |
-| ----------------- | -------------------------------- |
-| `npm run dev`     | Start development server         |
-| `npm run build`   | Build for production             |
-| `npm run preview` | Preview production build locally |
-| `npm run lint`    | Run ESLint                       |
-| `npm run deploy`  | Deploy to GitHub Pages           |
-
-## 🏗️ Project Structure
-
-```
-src/
-├── components/          # React components
-│   ├── About.tsx       # About section
-│   ├── Home.tsx        # Hero section
-│   ├── Works.tsx       # Work experience
-│   ├── WorkCard.tsx    # Individual work cards
-│   ├── Skills.tsx      # Skills showcase
-│   ├── SkillCard.tsx   # Individual skill cards
-│   ├── Navigation.tsx  # Main navigation
-│   └── ...
-├── locales/            # Translation files
-│   ├── en/            # English translations
-│   ├── fr/            # French translations
-│   └── de/            # German translations
-├── assets/            # Static assets
-│   ├── icons/         # SVG icons
-│   └── CV_APICH_FR.pdf # Resume
-├── utils/             # Utility functions
-│   └── iconImports.ts # Icon management
-├── constant.tsx       # App constants
-├── i18n.ts           # Internationalization config
-└── index.css         # Global styles
-```
-
-## 🎨 Key Components
-
-### **WorkCard Component**
-
-- 3D flip animation revealing detailed project information
-- Auto-scrolling skills showcase
-- Responsive design with hover effects
-
-### **SkillCard Component**
-
-- Interactive flip cards with random numbers
-- Smooth animations and hover states
-- Icon integration with proper asset handling
-
-### **Navigation Component**
-
-- Multi-language support
-- Dark/light mode toggle
-- Smooth section scrolling
-
-## 🌐 Deployment
-
-The website is automatically deployed to GitHub Pages using GitHub Actions:
-
-1. **Production Build** - Optimized bundle with asset optimization
-2. **Static Asset Handling** - Proper SVG and image processing
-3. **Base Path Configuration** - Configured for GitHub Pages subdirectory
-4. **Automated Deployment** - Push to main branch triggers deployment
-
-## 🎯 Performance Optimizations
-
-- **Vite Build Optimization** - Tree shaking and code splitting
-- **Image Optimization** - Optimized SVG icons and assets
-- **CSS Purging** - Unused styles removed in production
-- **Lazy Loading** - Components loaded on demand
-- **Animation Performance** - GPU-accelerated transforms
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👨‍💻 About the Developer
-
-**Aristide Pichereau** - Data Engineer & Full Stack Developer
-
-- 🔗 **Website**: [herzaristide.github.io](https://herzaristide.github.io/Herzaristide/)
-- 💼 **LinkedIn**: [Connect with me](https://linkedin.com/in/aristide-pichereau)
-- 📧 **Email**: [Contact me](mailto:your.email@example.com)
-
-### **Expertise**
-
-- **Data Engineering**: Apache Kafka, Spark, Hadoop, Python
-- **Full Stack Development**: React, TypeScript, Node.js, Next.js
-- **DevOps**: Docker, Kubernetes, Git
-- **UI/UX Design**: Modern, responsive interfaces with smooth animations
+---
+
+## 💻 Tech Stack & Expertise
+
+<div align="center">
+
+### **🛠️ Languages & Frameworks**
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+
+### **🎨 Styling & UI**
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![GSAP](https://img.shields.io/badge/GSAP-88CE02?style=for-the-badge&logo=greensock&logoColor=white)
+
+### **📊 Data Engineering**
+![Apache Kafka](https://img.shields.io/badge/Apache_Kafka-231F20?style=for-the-badge&logo=apache-kafka&logoColor=white)
+![Apache Spark](https://img.shields.io/badge/Apache_Spark-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white)
+![Hadoop](https://img.shields.io/badge/Hadoop-66CCFF?style=for-the-badge&logo=apache-hadoop&logoColor=black)
+
+### **🚀 DevOps & Tools**
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+
+</div>
 
 ---
 
-<div align="center">
-  
-**⭐ Star this repository if you found it helpful!**
+## 📊 GitHub Stats
 
-Made with ❤️ by [Aristide Pichereau](https://github.com/herzaristide)
+<div align="center">
+
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=herzaristide&show_icons=true&theme=radical&hide_border=true&bg_color=0D1117&title_color=53dd75&icon_color=53dd75&text_color=ffffff" />
+
+<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=herzaristide&layout=compact&theme=radical&hide_border=true&bg_color=0D1117&title_color=53dd75&text_color=ffffff" />
+
+</div>
+
+<div align="center">
+
+![GitHub Streak](https://streak-stats.demolab.com?user=herzaristide&theme=radical&hide_border=true&background=0D1117&stroke=53dd75&ring=53dd75&fire=53dd75&currStreakLabel=53dd75)
+
+</div>
+
+---
+
+## 🚀 Featured Projects
+
+<div align="center">
+
+### 🌟 **Interactive Portfolio Website**
+[![Portfolio Repo](https://github-readme-stats.vercel.app/api/pin/?username=herzaristide&repo=Herzaristide&theme=radical&hide_border=true&bg_color=0D1117&title_color=53dd75&icon_color=53dd75&text_color=ffffff)](https://github.com/herzaristide/Herzaristide)
+
+**Modern React portfolio with 3D animations, internationalization, and responsive design**
+
+</div>
+
+---
+
+## 🎯 What I Do
+
+<table>
+<tr>
+<td width="50%">
+
+### 📊 **Data Engineering**
+- Building robust data pipelines with **Apache Kafka** & **Spark**
+- Processing large-scale datasets with **Hadoop** ecosystem
+- Creating real-time streaming solutions
+- Implementing ETL processes with **Python**
+
+</td>
+<td width="50%">
+
+### 💻 **Full Stack Development**
+- Modern web applications with **React** & **TypeScript**
+- Responsive UI/UX with **Tailwind CSS**
+- Server-side development with **Node.js**
+- Smooth animations with **GSAP**
+
+</td>
+</tr>
+</table>
+
+---
+
+## 🏆 Achievements & Experience
+
+- 🔥 **5+ years** of experience in data engineering and web development
+- 🏢 Worked with major companies like **CapGemini**, **Orange**, **Enedis**
+- 🌍 **Multilingual** portfolio supporting 3 languages
+- ⚡ Specialized in **real-time data processing** and **modern web technologies**
+- 🎨 Expert in creating **interactive user experiences** with smooth animations
+
+---
+
+## 📈 Current Focus
+
+- 🔍 Exploring **advanced data streaming architectures**
+- 🎨 Mastering **3D animations** and **interactive web experiences**
+- 🌐 Building **scalable full-stack applications**
+- 📚 Continuously learning new technologies in **AI/ML** and **cloud computing**
+
+---
+
+## 🤝 Let's Connect!
+
+<div align="center">
+
+I'm always open to interesting conversations and collaboration opportunities!
+
+[![Website](https://img.shields.io/badge/🌐_Portfolio-Visit-53dd75?style=for-the-badge)](https://herzaristide.vercel.app/)
+[![LinkedIn](https://img.shields.io/badge/💼_LinkedIn-Connect-0077b5?style=for-the-badge)](https://linkedin.com/in/aristide-pichereau)
+[![Email](https://img.shields.io/badge/📧_Email-Contact-red?style=for-the-badge)](mailto:your.email@example.com)
+
+**💡 Open to freelance projects, collaborations, and full-time opportunities**
+
+---
+
+*"Transforming data into insights, and ideas into digital experiences"*
+
+⭐ **Star my repositories if you find them helpful!**
 
 </div>
