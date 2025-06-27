@@ -18,14 +18,6 @@
 
 ---
 
-**✨ Explore my full interactive experience**
-
-[![🔗 Visit Portfolio](https://img.shields.io/badge/🔗_Visit_Full_Website-53dd75?style=for-the-badge&labelColor=1a1a1a&color=53dd75)](https://herzaristide.github.io/Herzaristide/)
-
-</div>
-
----
-
 <div align="center">
 
 ## 💻 **Tech Stack & Expertise**
