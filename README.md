@@ -2,22 +2,6 @@
 
 A modern, interactive portfolio website showcasing my skills as a **Data Engineer & Full Stack Developer**. Built with cutting-edge technologies and featuring smooth animations, 3D effects, and responsive design.
 
-## 🌐 Live Demo
-
-<div align="center">
-  <iframe 
-    src="https://herzaristide.vercel.app/" 
-    width="100%" 
-    height="600" 
-    frameborder="0"
-    style="border: 2px solid #53dd75; border-radius: 12px; box-shadow: 0 10px 30px rgba(83, 221, 117, 0.3);">
-  </iframe>
-  
-  **👆 Interactive preview of the live website**
-  
-  [🔗 **Visit Full Website**](https://herzaristide.github.io/Herzaristide/)
-</div>
-
 ## ✨ Features
 
 ### 🎨 **Modern UI/UX**
