@@ -4,6 +4,8 @@ export interface Skill {
   name: string;
   score: number;
   favorite: boolean;
+  category: string;
+  icon: string;
 }
 
 export interface Mission {

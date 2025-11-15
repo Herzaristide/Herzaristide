@@ -21,26 +21,30 @@ interface WorkCardProps {
 
 const WorkCard = ({ mission, index, isFlipped, onFlip }: WorkCardProps) => {
   return (
-    <div className='w-full h-full p-8 flex items-center justify-center perspective-1000 relative'>
+    <div className='w-full p-8 flex items-center justify-center perspective-1000 relative'>
       {/* Card number indicator */}
       <div className='absolute top-8 left-8 text-8xl font-bold text-green/10 pointer-events-none'>
         {String(index + 1).padStart(2, '0')}
       </div>
 
       <div
-        className='relative w-screen h-3/4 cursor-pointer group'
+        className='relative w-fit max-w-4xl cursor-pointer group mx-auto'
         onClick={onFlip}
       >
         {/* Glowing effect */}
         <div className='absolute -inset-1 bg-gradient-to-r from-green/20 to-green/10 rounded-3xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
 
         <div
-          className={`relative w-full max-w-4xl h-full transition-all duration-700 [transform-style:preserve-3d] group-hover:scale-105 mx-auto ${
+          className={`relative w-full transition-all duration-700 [transform-style:preserve-3d] group-hover:scale-105 ${
             isFlipped ? '[transform:rotateY(180deg)]' : ''
           }`}
         >
           {/* Front Side */}
-          <div className='absolute w-full h-full flex flex-col justify-center rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md p-12 [backface-visibility:hidden] border border-white/20 shadow-2xl'>
+          <div
+            className={`w-full flex-col rounded-3xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md p-12 border border-white/20 shadow-2xl relative ${
+              isFlipped ? 'hidden' : 'flex'
+            }`}
+          >
             {/* Role Badge */}
             <div className='inline-flex items-center gap-2 px-4 py-2 bg-green/20 text-green rounded-full text-sm font-semibold mb-6 w-fit'>
               <div className='w-2 h-2 bg-green rounded-full animate-pulse'></div>
@@ -73,7 +77,7 @@ const WorkCard = ({ mission, index, isFlipped, onFlip }: WorkCardProps) => {
             </div>
 
             {/* Click indicator */}
-            <div className='absolute bottom-8 right-8 flex items-center gap-2 text-white/50 text-sm'>
+            <div className='mt-6 flex items-center justify-end gap-2 text-white/50 text-sm'>
               <span>Click to flip</span>
               <div className='w-6 h-6 border border-white/30 rounded-full flex items-center justify-center animate-pulse'>
                 <div className='w-2 h-2 bg-white/50 rounded-full'></div>
@@ -82,7 +86,11 @@ const WorkCard = ({ mission, index, isFlipped, onFlip }: WorkCardProps) => {
           </div>
 
           {/* Back Side */}
-          <div className='absolute w-full h-full flex flex-col justify-center rounded-3xl bg-gradient-to-br from-green/20 to-green/10 backdrop-blur-md p-12 [backface-visibility:hidden] [transform:rotateY(180deg)] border border-green/30 shadow-2xl'>
+          <div
+            className={`w-full flex-col rounded-3xl bg-gradient-to-br from-green/20 to-green/10 backdrop-blur-md p-12 border border-green/30 shadow-2xl relative ${
+              isFlipped ? 'flex' : 'hidden'
+            }`}
+          >
             {/* Details Badge */}
             <div className='inline-flex items-center gap-2 px-4 py-2 bg-green/30 text-white rounded-full text-sm font-semibold mb-6 w-fit'>
               <div className='w-2 h-2 bg-white rounded-full animate-pulse'></div>
@@ -143,7 +151,7 @@ const WorkCard = ({ mission, index, isFlipped, onFlip }: WorkCardProps) => {
             )}
 
             {/* Back indicator */}
-            <div className='absolute bottom-8 right-8 flex items-center gap-2 text-white/60 text-sm'>
+            <div className='mt-6 flex items-center justify-end gap-2 text-white/60 text-sm'>
               <span>Click to return</span>
               <div className='w-6 h-6 border border-white/40 rounded-full flex items-center justify-center animate-pulse'>
                 <div className='w-2 h-2 bg-white/60 rounded-full'></div>

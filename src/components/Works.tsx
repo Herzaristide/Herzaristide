@@ -1,14 +1,15 @@
 import { useTranslation } from 'react-i18next';
-import { jobs } from '../constant';
 import { useRef, useState, useEffect } from 'react';
 
 interface TimelineItem {
   id: string;
+  name: string;
   role: string;
   company: string;
   location: string;
   startDate: string;
   endDate: string;
+  description: string;
   context: string;
   tasks: string[];
   skills: string[];
@@ -19,12 +20,16 @@ interface TimelineItemProps {
   mission: TimelineItem;
   index: number;
   isLeft: boolean;
+  isFlipped: boolean;
+  onFlip: () => void;
 }
 
 const TimelineItemComponent = ({
   mission,
   index,
   isLeft,
+  isFlipped,
+  onFlip,
 }: TimelineItemProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const itemRef = useRef<HTMLDivElement>(null);
@@ -69,103 +74,133 @@ const TimelineItemComponent = ({
         }`}
         style={{ transitionDelay: `${index * 150}ms` }}
       >
-        <div className='bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-all duration-300 hover:scale-105'>
-          {/* Date badge */}
-          <div className='inline-flex items-center gap-2 px-4 py-2 bg-green/10 text-green rounded-full text-sm font-semibold mb-4'>
-            <div className='w-2 h-2 bg-green rounded-full animate-pulse'></div>
-            {mission.startDate} - {mission.endDate}
-          </div>
-
-          {/* Role and company */}
-          <h3 className='text-2xl font-bold text-gray-900 dark:text-white mb-2'>
-            {mission.role}
-          </h3>
-          <h4 className='text-xl text-green font-semibold mb-4'>
-            @ {mission.company}
-          </h4>
-
-          {/* Location */}
-          <div className='flex items-center gap-2 text-gray-600 dark:text-gray-400 mb-6'>
-            <svg
-              className='w-4 h-4'
-              fill='none'
-              stroke='currentColor'
-              viewBox='0 0 24 24'
+        <div
+          className='relative cursor-pointer perspective-1000'
+          onClick={onFlip}
+        >
+          <div className='relative w-full'>
+            {/* Front Side */}
+            <div
+              className={`w-full bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-all duration-300 ${
+                isFlipped ? 'hidden' : 'block'
+              }`}
             >
-              <path
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth={2}
-                d='M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z'
-              />
-              <path
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                strokeWidth={2}
-                d='M15 11a3 3 0 11-6 0 3 3 0 016 0z'
-              />
-            </svg>
-            <span className='capitalize'>{mission.location}</span>
-          </div>
+              {/* Project name */}
+              {mission.name && (
+                <h2 className='text-3xl font-bold text-gray-900 dark:text-white mb-4'>
+                  {mission.name}
+                </h2>
+              )}
+              {/* Company and role */}
+              <h3 className='text-xl text-green font-semibold mb-2'>
+                @ {mission.company}
+              </h3>
+              <h4 className='text-lg font-medium text-gray-700 dark:text-gray-300 mb-4'>
+                {mission.role}
+              </h4>
+              {/* Date badge */}
+              <div className='inline-flex items-center gap-2 px-4 py-2 bg-green/10 text-green rounded-full text-sm font-semibold mb-6'>
+                <div className='w-2 h-2 bg-green rounded-full animate-pulse'></div>
+                {mission.startDate} - {mission.endDate || 'Present'}
+              </div>
 
-          {/* Context */}
-          {mission.context && (
-            <p className='text-gray-700 dark:text-gray-300 mb-6 leading-relaxed italic border-l-4 border-green/30 pl-4'>
-              {mission.context}
-            </p>
-          )}
+              {/* Context */}
+              {mission.context && (
+                <p className='text-gray-700 dark:text-gray-300 mb-6 leading-relaxed italic border-l-4 border-green/30 pl-4'>
+                  {mission.context}
+                </p>
+              )}
 
-          {/* Tasks */}
-          {mission.tasks.length > 0 && (
-            <div className='mb-6'>
-              <h5 className='font-semibold text-gray-900 dark:text-white mb-3'>
-                Key Achievements
-              </h5>
-              <ul className='space-y-2'>
-                {mission.tasks.slice(0, 3).map((task: string, i: number) => (
-                  <li
-                    key={i}
-                    className='flex items-start gap-3 text-gray-700 dark:text-gray-300'
-                  >
-                    <div className='w-2 h-2 bg-green rounded-full mt-2 flex-shrink-0'></div>
-                    <span className='text-sm leading-relaxed'>{task}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {/* Skills */}
-          {mission.skills.length > 0 && (
-            <div>
-              <h5 className='font-semibold text-gray-900 dark:text-white mb-3'>
-                Technologies
-              </h5>
-              <div className='flex flex-wrap gap-2'>
-                {mission.skills.slice(0, 6).map((skill: string, i: number) => (
-                  <span
-                    key={i}
-                    className='px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm rounded-full border border-gray-200 dark:border-gray-600 hover:border-green/50 transition-colors duration-300'
-                  >
-                    {skill}
-                  </span>
-                ))}
-                {mission.skills.length > 6 && (
-                  <span className='px-3 py-1 text-green text-sm font-medium'>
-                    +{mission.skills.length - 6} more
-                  </span>
-                )}
+              {/* Click indicator */}
+              <div className='mt-6 flex items-center justify-end gap-2 text-gray-400 text-xs'>
+                <span>Click to flip</span>
+                <div className='w-4 h-4 border border-gray-400 rounded-full flex items-center justify-center'>
+                  <div className='w-1 h-1 bg-gray-400 rounded-full'></div>
+                </div>
               </div>
             </div>
-          )}
+
+            {/* Back Side */}
+            <div
+              className={`w-full bg-gradient-to-br from-green/10 to-green/5 dark:from-green/20 dark:to-green/10 rounded-2xl p-8 shadow-xl border border-green/30 ${
+                isFlipped ? 'block' : 'hidden'
+              }`}
+            >
+              {/* Project name on back */}
+              {mission.name && (
+                <h3 className='text-2xl font-bold text-gray-900 dark:text-white mb-4'>
+                  {mission.name}
+                </h3>
+              )}
+
+              {/* Description */}
+              {mission.description && (
+                <div className='mb-6'>
+                  <h5 className='font-semibold text-gray-900 dark:text-white mb-3'>
+                    Description
+                  </h5>
+                  <p className='text-gray-700 dark:text-gray-300 leading-relaxed text-sm'>
+                    {mission.description}
+                  </p>
+                </div>
+              )}
+
+              {/* All Tasks */}
+              {mission.tasks.length > 0 && (
+                <div className='mb-6'>
+                  <h5 className='font-semibold text-gray-900 dark:text-white mb-3'>
+                    All Achievements
+                  </h5>
+                  <ul className='space-y-2'>
+                    {mission.tasks.map((task: string, i: number) => (
+                      <li
+                        key={i}
+                        className='flex items-start gap-3 text-gray-700 dark:text-gray-300'
+                      >
+                        <div className='w-1.5 h-1.5 bg-green rounded-full mt-2 flex-shrink-0'></div>
+                        <span className='text-xs leading-relaxed'>{task}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* All Skills */}
+              {mission.skills.length > 0 && (
+                <div>
+                  <h5 className='font-semibold text-gray-900 dark:text-white mb-3'>
+                    All Technologies
+                  </h5>
+                  <div className='flex flex-wrap gap-1'>
+                    {mission.skills.map((skill: string, i: number) => (
+                      <span
+                        key={i}
+                        className='px-2 py-1 bg-green/20 text-green text-xs rounded-full border border-green/30 capitalize'
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Back indicator */}
+              <div className='mt-6 flex items-center justify-end gap-2 text-green/70 text-xs'>
+                <span>Click to return</span>
+                <div className='w-4 h-4 border border-green/70 rounded-full flex items-center justify-center'>
+                  <div className='w-1 h-1 bg-green/70 rounded-full'></div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* Connection line to timeline */}
           <div
-            className={`absolute top-8 ${
-              isLeft ? '-right-12' : '-left-12'
-            } w-12 h-0.5 bg-gradient-to-${
-              isLeft ? 'r' : 'l'
-            } from-green/50 to-transparent`}
+            className={`absolute top-8 w-12 h-0.5 from-green/50 to-transparent ${
+              isLeft
+                ? '-right-12 bg-gradient-to-r'
+                : '-left-12 bg-gradient-to-l'
+            }`}
           ></div>
         </div>
       </div>
@@ -177,36 +212,33 @@ const Works = () => {
   const { t } = useTranslation();
   const timelineRef = useRef<HTMLDivElement>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [flipped, setFlipped] = useState<number | null>(null);
 
-  // Gather and sort all missions by date
-  const allMissions = jobs
-    .flatMap((job) => {
-      const jobData = t(`${job}`, { returnObjects: true }) as any;
-      if (
-        jobData &&
-        typeof jobData === 'object' &&
-        Array.isArray(jobData.missions)
-      ) {
-        return jobData.missions.map((mission: any) => ({
-          id: `${job}-${mission.name || mission.role}`,
-          role: mission.role,
-          company: mission.company,
-          location: mission.location,
-          startDate: mission.start_date,
-          endDate: mission.end_date,
-          context: mission.context || '',
-          tasks: mission.tasks || [],
-          skills: mission.skills || [],
-          startYear: parseInt(
-            mission.start_date.split('/')[2] ||
-              mission.start_date.split('/')[1] ||
-              '2020'
-          ),
-        }));
-      }
-      return [];
-    })
-    .sort((a, b) => b.startYear - a.startYear); // Sort by start year, newest first
+  // Gather and sort all works by date
+  const allMissions = (() => {
+    const worksData = t('works', { returnObjects: true }) as any[];
+    if (Array.isArray(worksData)) {
+      return worksData.map((work: any) => ({
+        id: work.name || `${work.company}-${work.role}`,
+        name: work.name,
+        role: work.role,
+        company: work.company,
+        location: work.location,
+        startDate: work.start_date,
+        endDate: work.end_date,
+        description: work.description || '',
+        context: work.context || '',
+        tasks: work.tasks || [],
+        skills: work.skills || [],
+        startYear: parseInt(
+          work.start_date?.split('/')[2] ||
+            work.start_date?.split('/')[1] ||
+            '2020'
+        ),
+      }));
+    }
+    return [];
+  })().sort((a, b) => b.startYear - a.startYear); // Sort by start year, newest first
 
   // Handle scroll progress for timeline animation
   useEffect(() => {
@@ -279,6 +311,8 @@ const Works = () => {
                 mission={mission}
                 index={index}
                 isLeft={index % 2 === 0}
+                isFlipped={flipped === index}
+                onFlip={() => setFlipped(flipped === index ? null : index)}
               />
             ))}
           </div>

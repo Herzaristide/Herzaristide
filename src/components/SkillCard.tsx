@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { getIcon } from '../utils/iconImports';
+import { skills } from '../constant';
 
 const SkillCard = ({ skill, score }: { skill: string; score: number }) => {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -7,6 +7,11 @@ const SkillCard = ({ skill, score }: { skill: string; score: number }) => {
   const handleClick = () => {
     setIsFlipped(!isFlipped);
   };
+
+  // Find the skill data from constants
+  const skillData = skills.find(
+    (s) => s.name.toLowerCase() === skill.toLowerCase()
+  );
 
   return (
     <div className='group relative perspective-1000' onClick={handleClick}>
@@ -24,7 +29,7 @@ const SkillCard = ({ skill, score }: { skill: string; score: number }) => {
           {/* Icon */}
           <div className='transform transition-transform duration-300 group-hover:rotate-12 group-hover:scale-110'>
             <img
-              src={getIcon(skill)}
+              src={skillData?.icon}
               alt={skill}
               className='w-8 h-8 sm:w-10 sm:h-10 filter group-hover:drop-shadow-lg'
             />

@@ -73,8 +73,7 @@ const Home = ({ scrollTo }: { scrollTo: (location: string) => void }) => {
           }`}
         >
           <p className='text-gray-600 dark:text-gray-400 text-lg mb-6 max-w-2xl leading-relaxed'>
-            Passionate about creating innovative solutions that bridge the gap
-            between data science and web development.
+            {t('passionateDescription')}
           </p>
 
           <div className='flex flex-wrap gap-4'>

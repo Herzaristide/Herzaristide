@@ -4,159 +4,194 @@
   "hi": "Hallo, ich bin Aristide!",
   "welcome": "Willkommen auf meiner Webseite.",
   "presentation": "Ingenieur seit drei Jahren, spezialisiert auf Daten- und Webentwicklung.",
+  "passionateDescription": "Leidenschaftlich daran interessiert, innovative Lösungen zu schaffen, die die Lücke zwischen Datenwissenschaft und Webentwicklung schließen.",
   "viewMyWork": "Meine Arbeit ansehen",
   "getInTouch": "Kontakt aufnehmen",
-  "capGemini": {
-    "role": "Daten- & KI-Ingenieur",
-    "company": "capgemini engineering",
-    "missions": [
-      {
-        "name": "techpub",
-        "company": "capgemini",
-        "role": "Full-Stack-Entwickler",
-        "location": "brest",
-        "start_date": "06/2025",
-        "end_date": "06/2025",
-        "context": "KI-Vergleichsanwendung für restriktive Kundeninfrastruktur",
-        "tasks": [
-          "Vollständige Modernisierung des Designs nach UI/UX Best Practices.",
-          "Kohärentes Designsystem und verbesserte visuelle Hierarchie.",
-          "API-Updates zur Unterstützung neuer Frontend-Funktionalitäten."
-        ],
-        "skills": [
-          "frontend",
-          "git",
-          "python",
-          "poetry",
-          "react",
-          "api",
-          "typescript"
-        ]
-      },
-      {
-        "name": "mediation",
-        "company": "orange",
-        "role": "Dateningenieur",
-        "location": "brest",
-        "start_date": "08/2023",
-        "end_date": "04/2025",
-        "context": "Wartung und Verbesserung eines Rechenzentrums.",
-        "tasks": [
-          "Entwicklung und Bereitstellung mobiler Datenpipelines.",
-          "Cloud-Migration.",
-          "Dreiköpfiges Team mit agiler KAMBAN-Methode.",
-          "Wartung und Verbesserung einer ETL-Pipeline zur Verarbeitung mobiler Daten."
-        ],
-        "skills": [
-          "flink",
-          "hadoop",
-          "kafka",
-          "spark",
-          "jira",
-          "backend",
-          "etl",
-          "git",
-          "gcpm",
-          "grafana",
-          "scala"
-        ]
-      },
-      {
-        "name": "atawey hydrogen",
-        "company": "atawey",
-        "role": "Dateningenieur",
-        "location": "brest",
-        "start_date": "08/2023",
-        "end_date": "09/2023",
-        "context": "ETL-Pipeline-Erstellung",
-        "tasks": [
-          "Entwicklung einer Webanwendung zur Datenvisualisierung.",
-          "Dreiköpfiges Team mit agiler SCRUM-Methode.",
-          "Kommunikation auf Englisch.",
-          "Entwicklung einer ETL-Pipeline vor dem Einsatz eines KI-Modells zur Isolierung des Energieverbrauchs einer Wasserstofftankstelle."
-        ],
-        "skills": [
-          "backend",
-          "dask",
-          "datenpipeline",
-          "englisch",
-          "etl",
-          "frontend",
-          "git",
-          "python",
-          "scrum"
-        ]
-      }
-    ]
-  },
-  "astek": {
-    "role": "Funktionaler Ingenieur",
-    "company": "astek",
-    "missions": [
-      {
-        "name": null,
-        "company": "naval group",
-        "role": "Funktionaler Ingenieur",
-        "location": "brest",
-        "start_date": "09/2022",
-        "end_date": "04/2023",
-        "context": "Verwaltung und Konfiguration einer JIRA-Infrastruktur.",
-        "tasks": [],
-        "skills": ["agile", "scrum", "jira"]
-      }
-    ]
-  },
-  "orange": {
-    "role": "Dualer Dateningenieur",
-    "company": "orange",
-    "missions": [
-      {
-        "name": null,
-        "company": "orange",
-        "role": "Dateningenieur",
-        "location": "lannion",
-        "start_date": "10/2021",
-        "end_date": "10/2022 ",
-        "context": "Erstellung einer ETL-Pipeline zur Verarbeitung von Daten aus Mobilfunkroutern.",
-        "tasks": [
-          "Entwicklung und Bereitstellung einer Datenpipeline mit Geschwindigkeits- und Volumenanforderungen.",
-          "Architektur von Datenlösungen.",
-          "Technologiebeobachtung und Leistungstests.",
-          "Fünfköpfiges Team mit agiler SCRUM-Methode."
-        ],
-        "skills": [
-          "kafka",
-          "containerisierung",
-          "docker",
-          "etl",
-          "git",
-          "kubernetes",
-          "python",
-          "scala"
-        ]
-      }
-    ]
-  },
-  "adeo": {
-    "role": "Frontend-Entwickler",
-    "company": "adeo",
-    "missions": [
-      {
-        "name": "SOLEX",
-        "company": "adeo",
-        "role": "Praktikant Entwickler",
-        "location": "ronchin",
-        "start_date": "10/2019",
-        "end_date": "02/2020",
-        "context": "Entwicklung einer plattformübergreifenden Inventarverwaltungsoberfläche.",
-        "tasks": [
-          "Entwicklung einer plattformübergreifenden Inventarverwaltungsanwendung.",
-          "Anpassung von Modellen an Geschäftsanforderungen.",
-          "Zwanzigköpfiges Team mit agiler SCRUM-Methode.",
-          "Entwicklung einer plattformübergreifenden Inventarverwaltungsoberfläche."
-        ],
-        "skills": ["dart", "flutter", "frontend", "git"]
-      }
-    ]
-  }
+  "works": [
+    {
+      "name": "VisionForge",
+      "company": "CapGemini",
+      "role": "Leitender Entwickler",
+      "location": "Brest",
+      "start_date": "06/2025",
+      "end_date": null,
+      "description": "Kollaborative Anwendung zur Verwaltung, zum Training und zur Verfolgung von Machine Learning-Modellen: Datensatzorganisation, Trainingskonfiguration, Leistungsvisualisierung, Echtzeit-Zusammenarbeit und vereinfachte Modellbereitstellung.",
+      "context": "Erleichterung des Zugangs zu künstlicher Intelligenz innerhalb des Unternehmens durch Sensibilisierung für deren Nutzung, Demokratisierung von KI-Tools und Förderung ihrer Akzeptanz. Das Ziel ist es, die Produktivität durch KI-Lösungen zu steigern, die an die Geschäftsanforderungen angepasst sind, während gleichzeitig die Transformation interner Praktiken unterstützt wird.",
+      "tasks": [
+        "Konzeption und Verbesserung der Benutzererfahrung und grafischen Benutzeroberfläche, um die Anwendung intuitiv und zugänglich zu machen",
+        "Bereitstellung der Anwendung auf AWS, Verwaltung von Produktions- und Staging-Umgebungen, Automatisierung von Updates",
+        "Implementierung und Wartung von Continuous Integration- und Deployment-Pipelines zur Automatisierung von Tests, Build und Deployment",
+        "Entwicklung von Benutzeroberflächen, Komponentenintegration und Interaktion mit der Backend-API",
+        "Code-Refactoring und -Optimierung zur Verbesserung von Lesbarkeit, Wartbarkeit und Leistung",
+        "Auswahl von Technologien und Architekturen, die an Geschäftsanforderungen und technische Beschränkungen angepasst sind",
+        "Erstellung und Verwaltung von Containern zur Gewährleistung von Portabilität, Isolierung und Skalierbarkeit von Diensten",
+        "Konzeption und Implementierung einer Microservices-Architektur zur Modularisierung der Anwendung und Erleichterung ihrer Weiterentwicklung"
+      ],
+      "skills": ["git", "python", "poetry", "react", "api", "typescript"]
+    },
+    {
+      "name": "DocSentinel",
+      "company": "CapGemini",
+      "role": "Leitender Entwickler",
+      "location": "Brest",
+      "start_date": "06/2025",
+      "end_date": null,
+      "context": "KI-Vergleichsanwendung für restriktive Kundeninfrastruktur",
+      "tasks": [
+        "Vollständige Modernisierung des Designs nach UI/UX Best Practices.",
+        "Kohärentes Designsystem und verbesserte visuelle Hierarchie.",
+        "API-Updates zur Unterstützung neuer Frontend-Funktionalitäten."
+      ],
+      "skills": [
+        "frontend",
+        "git",
+        "python",
+        "poetry",
+        "react",
+        "api",
+        "typescript"
+      ]
+    },
+    {
+      "name": "DrawingValidation",
+      "company": "CapGemini",
+      "role": "Leitender Entwickler",
+      "location": "Brest",
+      "start_date": "06/2025",
+      "end_date": "06/2025",
+      "context": "KI-Vergleichsanwendung für restriktive Kundeninfrastruktur",
+      "tasks": [
+        "Vollständige Modernisierung des Designs nach UI/UX Best Practices.",
+        "Kohärentes Designsystem und verbesserte visuelle Hierarchie.",
+        "API-Updates zur Unterstützung neuer Frontend-Funktionalitäten."
+      ],
+      "skills": [
+        "frontend",
+        "git",
+        "python",
+        "poetry",
+        "react",
+        "api",
+        "typescript"
+      ]
+    },
+    {
+      "name": "TechPub",
+      "company": "capgemini",
+      "role": "Full-Stack-Entwickler",
+      "location": "brest",
+      "start_date": "06/2025",
+      "end_date": "06/2025",
+      "context": "KI-Vergleichsanwendung für restriktive Kundeninfrastruktur",
+      "tasks": [
+        "Vollständige Modernisierung des Designs nach UI/UX Best Practices.",
+        "Kohärentes Designsystem und verbesserte visuelle Hierarchie.",
+        "API-Updates zur Unterstützung neuer Frontend-Funktionalitäten."
+      ],
+      "skills": [
+        "frontend",
+        "git",
+        "python",
+        "poetry",
+        "react",
+        "api",
+        "typescript"
+      ]
+    },
+    {
+      "name": "mediation",
+      "company": "orange",
+      "role": "Dateningenieur",
+      "location": "brest",
+      "start_date": "08/2023",
+      "end_date": "04/2025",
+      "context": "Wartung und Verbesserung eines Rechenzentrums.",
+      "tasks": [
+        "Entwicklung und Bereitstellung mobiler Datenpipelines.",
+        "Cloud-Migration.",
+        "Dreiköpfiges Team mit agiler KAMBAN-Methode.",
+        "Wartung und Verbesserung einer ETL-Pipeline zur Verarbeitung mobiler Daten."
+      ],
+      "skills": [
+        "flink",
+        "hadoop",
+        "kafka",
+        "spark",
+        "jira",
+        "backend",
+        "etl",
+        "git",
+        "gcpm",
+        "grafana",
+        "scala"
+      ]
+    },
+    {
+      "name": "atawey hydrogen",
+      "company": "atawey",
+      "role": "Dateningenieur",
+      "location": "brest",
+      "start_date": "08/2023",
+      "end_date": "09/2023",
+      "context": "ETL-Pipeline-Erstellung",
+      "tasks": [
+        "Entwicklung einer Webanwendung zur Datenvisualisierung.",
+        "Dreiköpfiges Team mit agiler SCRUM-Methode.",
+        "Kommunikation auf Englisch.",
+        "Entwicklung einer ETL-Pipeline vor dem Einsatz eines KI-Modells zur Isolierung des Energieverbrauchs einer Wasserstofftankstelle."
+      ],
+      "skills": [
+        "backend",
+        "dask",
+        "datenpipeline",
+        "englisch",
+        "etl",
+        "frontend",
+        "git",
+        "python",
+        "scrum"
+      ]
+    },
+    {
+      "name": null,
+      "company": "orange",
+      "role": "Dateningenieur",
+      "location": "lannion",
+      "start_date": "10/2021",
+      "end_date": "10/2022 ",
+      "context": "Erstellung einer ETL-Pipeline zur Verarbeitung von Daten aus Mobilfunkroutern.",
+      "tasks": [
+        "Entwicklung und Bereitstellung einer Datenpipeline mit Geschwindigkeits- und Volumenanforderungen.",
+        "Architektur von Datenlösungen.",
+        "Technologiebeobachtung und Leistungstests.",
+        "Fünfköpfiges Team mit agiler SCRUM-Methode."
+      ],
+      "skills": [
+        "kafka",
+        "containerisierung",
+        "docker",
+        "etl",
+        "git",
+        "kubernetes",
+        "python",
+        "scala"
+      ]
+    },
+    {
+      "name": "SOLEX",
+      "company": "adeo",
+      "role": "Frontend-Entwickler",
+      "location": "ronchin",
+      "start_date": "10/2019",
+      "end_date": "02/2020",
+      "context": "Entwicklung einer plattformübergreifenden Inventarverwaltungsoberfläche.",
+      "tasks": [
+        "Entwicklung einer plattformübergreifenden Inventarverwaltungsanwendung.",
+        "Anpassung von Modellen an Geschäftsanforderungen.",
+        "Zwanzigköpfiges Team mit agiler SCRUM-Methode.",
+        "Entwicklung einer plattformübergreifenden Inventarverwaltungsoberfläche."
+      ],
+      "skills": ["dart", "flutter", "frontend", "git"]
+    }
+  ]
 }
