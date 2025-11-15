@@ -117,7 +117,6 @@ const Contacts = () => {
       className='relative min-h-dvh w-screen py-20 overflow-hidden'
     >
       {/* Animated background */}
-      <div className='absolute inset-0 bg-gradient-to-br from-green/5 via-transparent to-green/10'></div>
 
       {/* Floating geometric shapes */}
       <div className='absolute top-20 left-10 w-32 h-32 border border-green/20 rounded-full animate-spin [animation-duration:20s]'></div>

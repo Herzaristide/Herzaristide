@@ -59,7 +59,6 @@ const Projects = () => {
       className='relative min-h-dvh w-screen py-20 overflow-hidden'
     >
       {/* Animated background */}
-      <div className='absolute inset-0 bg-gradient-to-b from-gray-50/50 to-white dark:from-gray-900/50 dark:to-gray-800'></div>
 
       {/* Floating background elements */}
       <div className='absolute top-20 left-10 w-32 h-32 bg-green/5 rounded-full blur-xl animate-float'></div>

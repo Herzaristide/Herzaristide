@@ -15,29 +15,6 @@ const About = () => {
       id='about'
       className='relative min-h-dvh w-screen py-20 overflow-hidden'
     >
-      {/* Animated background */}
-      <div className='absolute inset-0 bg-gradient-to-t from-green/5 via-transparent to-green/10'></div>
-
-      {/* Floating geometric shapes */}
-      <div className='absolute top-1/4 left-10 w-28 h-28 border border-green/20 rounded-full animate-pulse [animation-duration:4s]'></div>
-      <div className='absolute top-10 right-20 w-20 h-20 bg-green/5 rotate-12 animate-spin [animation-duration:15s]'></div>
-      <div className='absolute bottom-1/3 right-10 w-16 h-16 border-2 border-green/30 rotate-45 animate-bounce [animation-delay:1s]'></div>
-      <div className='absolute bottom-20 left-1/4 w-12 h-12 bg-gradient-to-r from-green/20 to-green/10 rounded-full animate-ping [animation-delay:2s]'></div>
-
-      {/* Particle dots */}
-      {[...Array(12)].map((_, i) => (
-        <div
-          key={i}
-          className='absolute w-1 h-1 bg-green/30 rounded-full animate-pulse'
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            animationDelay: `${Math.random() * 3}s`,
-            animationDuration: `${3 + Math.random() * 2}s`,
-          }}
-        ></div>
-      ))}
-
       <div className='relative z-10 container mx-auto px-8 flex flex-col lg:flex-row items-center gap-16'>
         {/* Left side - Text content */}
         <div className='flex-1 max-w-3xl'>

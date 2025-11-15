@@ -5,7 +5,6 @@ const Skills = () => {
   return (
     <section id='skills' className='relative h-full w-screen'>
       {/* Animated background gradient */}
-      <div className='absolute inset-0 bg-gradient-to-br from-green/5 via-transparent to-green/10 animate-pulse'></div>
 
       {/* Floating geometric shapes */}
       <div className='absolute top-10 left-10 w-20 h-20 border-2 border-green/20 rounded-full animate-bounce'></div>

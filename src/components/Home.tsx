@@ -14,31 +14,8 @@ const Home = ({ scrollTo }: { scrollTo: (location: string) => void }) => {
   return (
     <section
       id='home'
-      className='relative h-dvh w-screen flex flex-col justify-center p-40 overflow-hidden'
+      className='relative h-dvh w-screen flex flex-col justify-center p-40'
     >
-      {/* Animated background gradient */}
-      <div className='absolute inset-0 bg-gradient-to-br from-green/5 via-transparent to-green/10'></div>
-
-      {/* Floating geometric shapes */}
-      <div className='absolute top-20 right-20 w-32 h-32 border border-green/20 rounded-full animate-spin [animation-duration:20s]'></div>
-      <div className='absolute top-1/3 left-10 w-24 h-24 bg-green/5 rotate-45 animate-pulse'></div>
-      <div className='absolute bottom-20 right-1/4 w-16 h-16 border-2 border-green/30 animate-bounce [animation-delay:1s]'></div>
-      <div className='absolute top-1/2 right-10 w-8 h-8 bg-gradient-to-r from-green to-green/50 rounded-full animate-ping [animation-delay:2s]'></div>
-
-      {/* Particle effect dots */}
-      {[...Array(15)].map((_, i) => (
-        <div
-          key={i}
-          className='absolute w-1 h-1 bg-green/20 rounded-full animate-pulse'
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            animationDelay: `${Math.random() * 3}s`,
-            animationDuration: `${2 + Math.random() * 2}s`,
-          }}
-        ></div>
-      ))}
-
       <div className='relative z-10 max-w-4xl'>
         {/* Name with typing animation */}
         <div className='mb-4 overflow-hidden'>

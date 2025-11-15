@@ -21,10 +21,7 @@ interface WorkCardProps {
 
 const WorkCard = ({ mission, index, isFlipped, onFlip }: WorkCardProps) => {
   return (
-    <div className='job_section w-screen h-full p-8 flex items-center justify-center perspective-1000 relative'>
-      {/* Background gradient for each card */}
-      <div className='absolute inset-0 bg-gradient-to-br from-green/5 via-transparent to-green/10 opacity-50'></div>
-
+    <div className='w-full h-full p-8 flex items-center justify-center perspective-1000 relative'>
       {/* Card number indicator */}
       <div className='absolute top-8 left-8 text-8xl font-bold text-green/10 pointer-events-none'>
         {String(index + 1).padStart(2, '0')}
