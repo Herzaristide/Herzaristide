@@ -169,10 +169,10 @@ const About = () => {
                   </h3>
                   <div className='flex flex-wrap gap-2 justify-center'>
                     {[
-                      'Data Engineering',
-                      'Web Development',
-                      'UI/UX Design',
-                      'Machine Learning',
+                      t('dataEngineering'),
+                      t('webDevelopment'),
+                      t('uiUxDesign'),
+                      t('machineLearning'),
                     ].map((skill, index) => (
                       <span
                         key={skill}

@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { skills } from '../constant';
 
 const SkillCard = ({ skill, score }: { skill: string; score: number }) => {
+  const { t } = useTranslation();
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleClick = () => {
@@ -50,7 +52,7 @@ const SkillCard = ({ skill, score }: { skill: string; score: number }) => {
             {score}
           </div>
           <div className='text-xs mt-2 font-medium text-center text-green/70'>
-            Lucky #{score}
+            {t('luckyNumber', { score })}
           </div>
 
           {/* Decorative elements */}

@@ -1,8 +1,10 @@
 import { useState, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import SkillCard from './SkillCard';
 import { skills } from '../constant';
 
 const Skills = () => {
+  const { t } = useTranslation();
   const [categoryFilter, setCategoryFilter] = useState<string>('all');
   const [minScore, setMinScore] = useState<number>(0);
   const [sortBy, setSortBy] = useState<'name' | 'score'>('name');
@@ -41,11 +43,6 @@ const Skills = () => {
     return processedSkills;
   }, [categoryFilter, minScore, sortBy, sortOrder]);
 
-  // Count matching skills for display
-  const matchingCount = processedSkills.filter(
-    (skill) => skill.isMatching
-  ).length;
-
   return (
     <section id='skills' className='relative min-h-screen w-screen py-20'>
       {/* Animated background gradient */}
@@ -60,7 +57,7 @@ const Skills = () => {
         {/* Section title */}
         <div className='text-center mb-16'>
           <h2 className='text-6xl font-bold mb-4 bg-gradient-to-r from-green to-green/70 bg-clip-text text-transparent'>
-            Skills & Technologies
+            {t('skillsTitle')}
           </h2>
           <div className='w-24 h-1 bg-gradient-to-r from-transparent via-green to-transparent mx-auto rounded-full'></div>
         </div>
@@ -71,14 +68,14 @@ const Skills = () => {
             {/* Category Filter */}
             <div className='space-y-2'>
               <label className='text-sm font-medium text-gray-700 dark:text-gray-300'>
-                Category
+                {t('categoryLabel')}
               </label>
               <select
                 value={categoryFilter}
                 onChange={(e) => setCategoryFilter(e.target.value)}
                 className='w-full px-3 py-2 bg-white dark:bg-gray-800 border border-green/30 rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-green focus:border-transparent'
               >
-                <option value='all'>All Categories</option>
+                <option value='all'>{t('allCategories')}</option>
                 {categories.map((category) => (
                   <option key={category} value={category}>
                     {category}
@@ -90,14 +87,14 @@ const Skills = () => {
             {/* Score Filter */}
             <div className='space-y-2'>
               <label className='text-sm font-medium text-gray-700 dark:text-gray-300'>
-                Min Score
+                {t('minScoreLabel')}
               </label>
               <select
                 value={minScore}
                 onChange={(e) => setMinScore(Number(e.target.value))}
                 className='w-full px-3 py-2 bg-white dark:bg-gray-800 border border-green/30 rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-green focus:border-transparent'
               >
-                <option value={0}>Any Score</option>
+                <option value={0}>{t('anyScore')}</option>
                 <option value={1}>1+</option>
                 <option value={2}>2+</option>
                 <option value={3}>3+</option>
@@ -109,38 +106,32 @@ const Skills = () => {
             {/* Sort By */}
             <div className='space-y-2'>
               <label className='text-sm font-medium text-gray-700 dark:text-gray-300'>
-                Sort By
+                {t('sortByLabel')}
               </label>
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as 'name' | 'score')}
                 className='w-full px-3 py-2 bg-white dark:bg-gray-800 border border-green/30 rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-green focus:border-transparent'
               >
-                <option value='name'>Name</option>
-                <option value='score'>Score</option>
+                <option value='name'>{t('nameSort')}</option>
+                <option value='score'>{t('scoreSort')}</option>
               </select>
             </div>
 
             {/* Sort Order */}
             <div className='space-y-2'>
               <label className='text-sm font-medium text-gray-700 dark:text-gray-300'>
-                Order
+                {t('orderLabel')}
               </label>
               <select
                 value={sortOrder}
                 onChange={(e) => setSortOrder(e.target.value as 'asc' | 'desc')}
                 className='w-full px-3 py-2 bg-white dark:bg-gray-800 border border-green/30 rounded-lg text-gray-900 dark:text-white focus:ring-2 focus:ring-green focus:border-transparent'
               >
-                <option value='asc'>Ascending</option>
-                <option value='desc'>Descending</option>
+                <option value='asc'>{t('ascending')}</option>
+                <option value='desc'>{t('descending')}</option>
               </select>
             </div>
-          </div>
-
-          {/* Results count */}
-          <div className='mt-4 text-center text-sm text-gray-600 dark:text-gray-400'>
-            Showing {processedSkills.filter((skill) => skill.isMatching).length}{' '}
-            of {skills.length} skills
           </div>
         </div>
 

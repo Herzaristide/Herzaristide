@@ -281,12 +281,11 @@ const Works = () => {
         <div className='text-center'>
           <h2 className='text-5xl md:text-6xl font-bold mb-4'>
             <span className='bg-gradient-to-r from-gray-900 via-green to-gray-900 dark:from-white dark:via-green dark:to-white bg-clip-text text-transparent'>
-              Work Experience
+              {t('workExperienceTitle')}
             </span>
           </h2>
           <p className='text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto'>
-            A chronological journey through my professional experience and key
-            achievements
+            {t('workExperienceDescription')}
           </p>
         </div>
       </div>
