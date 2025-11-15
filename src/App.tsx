@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import Navigation from './components/Navigation';
 import Home from './components/Home';
 import Works from './components/Works';
@@ -7,6 +7,7 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contacts from './components/Contacts';
 import Resume from './components/Resume';
+import { ThemeProvider, useTheme } from './contexts/ThemeContext';
 import './i18n';
 import gsap from 'gsap';
 import { ScrollSmoother, ScrollTrigger, ScrollToPlugin } from 'gsap/all';
@@ -14,8 +15,8 @@ import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, ScrollSmoother);
 
-function App() {
-  const [dark, setDark] = useState<string>('');
+function AppContent() {
+  const { dark } = useTheme();
   const smoother = useRef<ScrollSmoother | null>(null);
   useGSAP(() => {
     smoother.current = ScrollSmoother.create({
@@ -32,14 +33,14 @@ function App() {
   };
   return (
     <div id='wrapper'>
-      <Navigation dark={dark} setDark={setDark} scrollTo={scrollTo} />
+      <Navigation scrollTo={scrollTo} />
       <main
         id='content'
-        className={`${
-          dark ? 'dark' : ''
-        } bg-white dark:bg-black dark:text-white text-black`}
+        className={`bg-white dark:bg-black dark:text-white text-black ${
+          dark && 'dark'
+        }`}
       >
-        <Home />
+        <Home scrollTo={scrollTo} />
         <About />
         <Works />
         <Skills />
@@ -48,6 +49,14 @@ function App() {
         <Contacts />
       </main>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <ThemeProvider>
+      <AppContent />
+    </ThemeProvider>
   );
 }
 

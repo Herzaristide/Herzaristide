@@ -1,4 +1,11 @@
 {
+  "job": "Engineer",
+  "specialisation": "Data & Web",
+  "hi": "Hi, I'm Aristide !",
+  "welcome": "Welcome to my webpage.",
+  "presentation": "Engineer since three years, I'm specialized in data and web development.",
+  "viewMyWork": "View My Work",
+  "getInTouch": "Get In Touch",
   "capGemini": {
     "role": "Data & AI Engineer",
     "company": "capgemini engineering",
@@ -10,11 +17,11 @@
         "location": "brest",
         "start_date": "06/2025",
         "end_date": "06/2025",
-        "context": "AI Comparison Application for Restrictive Customer Infrastructure",
+        "context": "AI comparison application for restrictive client infrastructure",
         "tasks": [
-          "Complete modernization of the design using UI/UX best practices.",
+          "Complete design modernization following UI/UX best practices.",
           "Consistent design system and improved visual hierarchy.",
-          "API updates to support new frontend functionalities."
+          "API updates to support new frontend features."
         ],
         "skills": [
           "frontend",
@@ -33,12 +40,12 @@
         "location": "brest",
         "start_date": "08/2023",
         "end_date": "04/2025",
-        "context": "Data center maintenance and improvement.",
+        "context": "Maintenance and improvement of a data center.",
         "tasks": [
           "Development and deployment of mobile data pipelines.",
           "Cloud migration.",
-          "Three-person team using agile KAMBAN.",
-          "Maintenance and improvement of an ETL pipeline for processing mobile data."
+          "Three-person team in agile KAMBAN.",
+          "Maintenance and improvement of an ETL pipeline for mobile data processing."
         ],
         "skills": [
           "flink",
@@ -61,12 +68,12 @@
         "location": "brest",
         "start_date": "08/2023",
         "end_date": "09/2023",
-        "context": "ETL pipeline building",
+        "context": "ETL pipeline construction",
         "tasks": [
-          "Web application development for data visualisation.",
-          "Three-person team using agile SCRUM.",
+          "Development of a web application for data visualization.",
+          "Three-person team in agile SCRUM.",
           "Communication in English.",
-          "Development of an ETL pipeline prior to the application of an artificial intelligence model responsible for isolating the energy consumption of a hydrogen car charging station."
+          "Development of an ETL pipeline before applying an AI model responsible for isolating the energy consumption of a hydrogen car charging station."
         ],
         "skills": [
           "backend",
@@ -93,14 +100,14 @@
         "location": "brest",
         "start_date": "09/2022",
         "end_date": "04/2023",
-        "context": "Management and configuration of a JIRA infrastructure.",
+        "context": "Management and configuration of JIRA infrastructure.",
         "tasks": [],
         "skills": ["agile", "scrum", "jira"]
       }
     ]
   },
   "orange": {
-    "role": "Work-study data engineer",
+    "role": "Data engineer apprentice",
     "company": "orange",
     "missions": [
       {
@@ -110,12 +117,12 @@
         "location": "lannion",
         "start_date": "10/2021",
         "end_date": "10/2022 ",
-        "context": "Construction of an ETl pipeline for processing data from mobile network routers.",
+        "context": "ETL pipeline construction for processing mobile network router data.",
         "tasks": [
           "Development and deployment of a data pipeline subject to speed and volume constraints.",
           "Data solution architecture.",
-          "Technology monitoring and performance testing.",
-          "Five-person team using agile SCRUM."
+          "Technology watch and performance testing.",
+          "Five-person team in agile SCRUM."
         ],
         "skills": [
           "kafka",
@@ -137,16 +144,16 @@
       {
         "name": "SOLEX",
         "company": "adeo",
-        "role": "intern developer",
+        "role": "developer intern",
         "location": "ronchin",
         "start_date": "10/2019",
         "end_date": "02/2020",
-        "context": "Development of a cross-platform inventory management interface.",
+        "context": "Development of a multiplatform inventory management interface.",
         "tasks": [
-          "Development of a cross-platform inventory management application.",
-          "Adaptation of models to meet business needs.",
-          "Team of twenty people using agile SCRUM.",
-          "Development of a cross-platform inventory management interface."
+          "Development of a multiplatform inventory management application.",
+          "Adapting models to business needs.",
+          "Twenty-person team in agile SCRUM.",
+          "Development of a multiplatform inventory management interface."
         ],
         "skills": ["dart", "flutter", "frontend", "git"]
       }

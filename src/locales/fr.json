@@ -1,4 +1,11 @@
 {
+  "job": "Ingénieur Logiciel IA",
+  "specialisation": "Data & Web",
+  "hi": "Salut, je suis Aristide !",
+  "welcome": "Bienvenue sur ma page web.",
+  "presentation": "Ingénieur depuis trois ans, je suis spécialisé dans le développement de données et web.",
+  "viewMyWork": "Voir mon travail",
+  "getInTouch": "Me contacter",
   "capGemini": {
     "role": "Ingénieur Data & IA",
     "company": "capgemini engineering",

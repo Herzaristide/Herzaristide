@@ -26,6 +26,7 @@ import tailwindIcon from '../assets/icons/tailwind.svg';
 export const iconMap: Record<string, string> = {
   about: aboutIcon,
   contact: contactIcon,
+  contacts: contactIcon, // Alias for contact
   dark: darkIcon,
   docker: dockerIcon,
   flutter: flutterIcon,
@@ -49,6 +50,6 @@ export const iconMap: Record<string, string> = {
   tailwind: tailwindIcon,
 };
 
-export const getIcon = (iconName: string): string => {
-  return iconMap[iconName] || '';
+export const getIcon = (iconName: string): string | null => {
+  return iconMap[iconName] || null;
 };

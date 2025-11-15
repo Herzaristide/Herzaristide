@@ -1,4 +1,11 @@
 {
+  "job": "Full-Stack-Entwickler",
+  "specialisation": "Daten & Web",
+  "hi": "Hallo, ich bin Aristide!",
+  "welcome": "Willkommen auf meiner Webseite.",
+  "presentation": "Ingenieur seit drei Jahren, spezialisiert auf Daten- und Webentwicklung.",
+  "viewMyWork": "Meine Arbeit ansehen",
+  "getInTouch": "Kontakt aufnehmen",
   "capGemini": {
     "role": "Daten- & KI-Ingenieur",
     "company": "capgemini engineering",

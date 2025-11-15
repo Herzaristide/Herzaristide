@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { skills } from '../constant';
 import HomeSkillButton from './HomeSkillButton';
 
-const Home = () => {
+const Home = ({ scrollTo }: { scrollTo: (location: string) => void }) => {
   const { t } = useTranslation();
   const [isVisible, setIsVisible] = useState(false);
 
@@ -14,7 +14,7 @@ const Home = () => {
   return (
     <section
       id='home'
-      className='relative h-dvh w-screen flex flex-col justify-center p-8 overflow-hidden'
+      className='relative h-dvh w-screen flex flex-col justify-center p-40 overflow-hidden'
     >
       {/* Animated background gradient */}
       <div className='absolute inset-0 bg-gradient-to-br from-green/5 via-transparent to-green/10'></div>
@@ -56,29 +56,14 @@ const Home = () => {
         </div>
 
         {/* Job title with scale animation */}
-        <div className='mb-2 overflow-hidden'>
+        <div className='mb-2 '>
           <h1
             className={`font-bold text-6xl md:text-8xl lg:text-9xl transform transition-all duration-1000 delay-300 ${
               isVisible ? 'scale-100 opacity-100' : 'scale-75 opacity-0'
             }`}
           >
             <span className='bg-gradient-to-r from-green via-green/80 to-green bg-clip-text text-transparent drop-shadow-sm'>
-              {t('home:job')}
-            </span>
-          </h1>
-        </div>
-
-        {/* Specialization with slide animation */}
-        <div className='mb-8 overflow-hidden'>
-          <h1
-            className={`font-bold text-6xl md:text-8xl lg:text-9xl transform transition-all duration-1000 delay-500 ${
-              isVisible
-                ? 'translate-y-0 opacity-100'
-                : 'translate-y-8 opacity-0'
-            }`}
-          >
-            <span className='bg-gradient-to-r from-green to-green/70 bg-clip-text text-transparent drop-shadow-sm'>
-              {t('home:specialisation')}
+              {t('job')}
             </span>
           </h1>
         </div>
@@ -116,14 +101,20 @@ const Home = () => {
           </p>
 
           <div className='flex flex-wrap gap-4'>
-            <button className='group relative px-8 py-4 bg-gradient-to-r from-green to-green/80 text-white font-semibold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-green/30'>
-              <span className='relative z-10'>View My Work</span>
+            <button
+              onClick={() => scrollTo('#works')}
+              className='group relative px-8 py-4 bg-gradient-to-r from-green to-green/80 text-white font-semibold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-green/30'
+            >
+              <span className='relative z-10'>{t('viewMyWork')}</span>
               <div className='absolute inset-0 bg-gradient-to-r from-green/80 to-green scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left'></div>
             </button>
 
-            <button className='group px-8 py-4 border-2 border-green text-green hover:bg-green hover:text-white font-semibold rounded-full transition-all duration-300 hover:scale-105'>
+            <button
+              onClick={() => scrollTo('#contact')}
+              className='group px-8 py-4 border-2 border-green text-green hover:bg-green hover:text-white font-semibold rounded-full transition-all duration-300 hover:scale-105'
+            >
               <span className='flex items-center gap-2'>
-                Get In Touch
+                {t('getInTouch')}
                 <svg
                   className='w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300'
                   fill='none'

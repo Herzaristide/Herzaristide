@@ -13,7 +13,7 @@ const Works = () => {
 
   // Gather all missions from all jobs
   const allMissions = jobs.flatMap((job) => {
-    const jobData = t(`works:${job}`, { returnObjects: true }) as any;
+    const jobData = t(`${job}`, { returnObjects: true }) as any;
     if (
       jobData &&
       typeof jobData === 'object' &&

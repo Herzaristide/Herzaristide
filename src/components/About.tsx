@@ -1,60 +1,13 @@
 import { useTranslation } from 'react-i18next';
-import { useState, useEffect, useRef } from 'react';
+import { useIntersectionObserver, useAnimatedCounter } from '../hooks';
 
 const About = () => {
   const { t } = useTranslation();
-  const [isVisible, setIsVisible] = useState(false);
-  const [animatedStats, setAnimatedStats] = useState({ years: 0, projects: 0 });
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-
-          // Animate statistics
-          const animateValue = (
-            start: number,
-            end: number,
-            setter: (value: number) => void
-          ) => {
-            const duration = 2000;
-            const startTimestamp = performance.now();
-
-            const step = (timestamp: number) => {
-              const elapsed = timestamp - startTimestamp;
-              const progress = Math.min(elapsed / duration, 1);
-              const currentValue = Math.floor(start + (end - start) * progress);
-              setter(currentValue);
-
-              if (progress < 1) {
-                requestAnimationFrame(step);
-              }
-            };
-
-            requestAnimationFrame(step);
-          };
-
-          setTimeout(() => {
-            animateValue(0, 3, (value) =>
-              setAnimatedStats((prev) => ({ ...prev, years: value }))
-            );
-            animateValue(0, 15, (value) =>
-              setAnimatedStats((prev) => ({ ...prev, projects: value }))
-            );
-          }, 800);
-        }
-      },
-      { threshold: 0.3 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  const { isVisible, ref: sectionRef } = useIntersectionObserver({
+    threshold: 0.3,
+  });
+  const yearsCount = useAnimatedCounter(3, 2000, 800);
+  const projectsCount = useAnimatedCounter(15, 2000, 800);
 
   return (
     <section
@@ -98,7 +51,7 @@ const About = () => {
               }`}
             >
               <span className='bg-gradient-to-r from-green via-green/80 to-green bg-clip-text text-transparent'>
-                {t('about:hi')}
+                {t('hi')}
               </span>
             </h2>
           </div>
@@ -113,7 +66,7 @@ const About = () => {
               }`}
             >
               <span className='font-semibold text-gray-900 dark:text-white'>
-                {t('about:1')}
+                {t('presentation')}
               </span>
             </p>
 
@@ -124,20 +77,14 @@ const About = () => {
                   : 'translate-y-8 opacity-0'
               }`}
             >
-              {t('about:2', { count: 3 })
-                .split('3')
-                .map((part, index) => (
-                  <span key={index}>
-                    {part}
-                    {index === 0 && (
-                      <span className='inline-flex items-center mx-2'>
-                        <span className='text-4xl font-bold text-green animate-pulse'>
-                          {animatedStats.years}
-                        </span>
-                      </span>
-                    )}
-                  </span>
-                ))}
+              With{' '}
+              <span className='inline-flex items-center mx-2'>
+                <span className='text-4xl font-bold text-green animate-pulse'>
+                  {yearsCount}
+                </span>
+              </span>{' '}
+              years of experience focused on developing and maintaining data
+              solutions.
             </p>
 
             <p
@@ -148,7 +95,7 @@ const About = () => {
               }`}
             >
               <span className='relative'>
-                {t('about:3')}
+                Keen interest in developing intuitive user interfaces.
                 <span className='absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-green to-transparent'></span>
               </span>
             </p>
@@ -166,7 +113,7 @@ const About = () => {
               <div className='absolute -inset-0.5 bg-gradient-to-r from-green to-green/50 rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-300'></div>
               <div className='relative'>
                 <div className='text-3xl font-bold text-green mb-2'>
-                  {animatedStats.years}+
+                  {yearsCount}+
                 </div>
                 <div className='text-gray-600 dark:text-gray-300 font-medium'>
                   Years Experience
@@ -178,7 +125,7 @@ const About = () => {
               <div className='absolute -inset-0.5 bg-gradient-to-r from-green to-green/50 rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-300'></div>
               <div className='relative'>
                 <div className='text-3xl font-bold text-green mb-2'>
-                  {animatedStats.projects}+
+                  {projectsCount}+
                 </div>
                 <div className='text-gray-600 dark:text-gray-300 font-medium'>
                   Projects Completed

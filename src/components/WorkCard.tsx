@@ -38,7 +38,7 @@ const WorkCard = ({ mission, index, isFlipped, onFlip }: WorkCardProps) => {
         <div className='absolute -inset-1 bg-gradient-to-r from-green/20 to-green/10 rounded-3xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
 
         <div
-          className={`relative w-full h-full transition-all duration-700 [transform-style:preserve-3d] group-hover:scale-105 ${
+          className={`relative w-full max-w-4xl h-full transition-all duration-700 [transform-style:preserve-3d] group-hover:scale-105 mx-auto ${
             isFlipped ? '[transform:rotateY(180deg)]' : ''
           }`}
         >

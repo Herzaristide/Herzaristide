@@ -1,19 +1,12 @@
 import { LuSun, LuMoon } from 'react-icons/lu';
 import Languages from './Languages';
-import type { SetStateAction, Dispatch } from 'react';
 import { links } from '../constant';
 import { useState } from 'react';
 import { getIcon } from '../utils/iconImports';
+import { useTheme } from '../contexts/ThemeContext';
 
-const Navigation = ({
-  dark,
-  setDark,
-  scrollTo,
-}: {
-  dark: string;
-  setDark: Dispatch<SetStateAction<string>>;
-  scrollTo: (location: string) => void;
-}) => {
+const Navigation = ({ scrollTo }: { scrollTo: (location: string) => void }) => {
+  const { dark, toggleDark } = useTheme();
   const [visible, setVisible] = useState(false);
   const [activeSection] = useState('home');
 
@@ -21,7 +14,7 @@ const Navigation = ({
     <>
       {/* Hover trigger area */}
       <div
-        className='fixed top-0 left-0 h-screen w-4 z-20 group'
+        className='fixed top-0 left-0 h-screen w-12 z-20 group'
         onMouseEnter={() => setVisible(true)}
       >
         {/* Subtle indicator line */}
@@ -112,7 +105,7 @@ const Navigation = ({
 
             <button
               title={dark ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-              onClick={() => setDark(dark ? '' : 'dark')}
+              onClick={toggleDark}
               className='relative p-3 rounded-xl bg-white/5 text-white/80 hover:bg-green/10 hover:text-green transition-all duration-300 border border-transparent hover:border-green/30 hover:scale-110 hover:-translate-y-1'
             >
               {dark ? (

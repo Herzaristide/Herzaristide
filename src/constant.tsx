@@ -1,3 +1,5 @@
+import type { Skill, ContactUrls } from './types';
+
 export const links = [
   'home',
   'about',
@@ -5,12 +7,12 @@ export const links = [
   'projects',
   'skills',
   'resume',
-  'contact',
+  'contacts',
 ];
 
-export const jobs = ['capGemini', 'astek', 'orange', 'adeo', 'enedis', 'isen'];
+export const jobs = ['capGemini', 'astek', 'orange', 'adeo'];
 
-export const skills = [
+export const skills: Skill[] = [
   { name: 'react', score: 4, favorite: true },
   { name: 'typescript', score: 3, favorite: true },
   { name: 'python', score: 4, favorite: true },
@@ -25,7 +27,7 @@ export const skills = [
   { name: 'next', score: 2, favorite: false },
 ];
 
-export const contactsUrl = {
+export const contactsUrl: ContactUrls = {
   email: 'herzaristide@outlook.com',
   phone: '0781819395',
   linkedin: 'https://www.linkedin.com/in/herzaristide/',
