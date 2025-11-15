@@ -32,7 +32,7 @@ const projects = [
       'i18n',
       'Framer Motion',
     ],
-    liveUrl: 'https://herzaristide.vercel.app/',
+    liveUrl: 'http://localhost:5173/',
     githubUrl: 'https://github.com/yourusername/portfolio',
   },
 ];
@@ -143,12 +143,12 @@ const ProjectCard = ({
       </div>
 
       {/* Project title */}
-      <h3 className='text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-green transition-colors'>
+      <h3 className='text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-green transition-colors'>
         {project.title}
       </h3>
 
       {/* Description */}
-      <p className='text-gray-600 dark:text-gray-400 text-sm mb-4 line-clamp-3'>
+      <p className='text-gray-600 dark:text-gray-400 text-xs mb-3 line-clamp-2'>
         {project.description}
       </p>
 
@@ -202,17 +202,14 @@ const Projects = () => {
   };
 
   return (
-    <section
-      id='projects'
-      className='relative h-screen w-screen overflow-hidden'
-    >
+    <section id='projects' className='relative w-screen overflow-hidden'>
       {/* Background elements */}
       <div className='absolute top-10 right-10 w-20 h-20 border-2 border-green/20 rounded-full animate-bounce'></div>
       <div className='absolute bottom-20 left-10 w-16 h-16 border-2 border-green/30 rotate-45 animate-spin [animation-duration:8s]'></div>
 
-      <div className='flex h-full'>
-        {/* Left side - Preview iframe (2/3 width) */}
-        <div className='w-2/3 h-full relative bg-black'>
+      <div className='flex flex-col h-screen p-20'>
+        {/* Top section - Centered iframe with padding */}
+        <div className='flex-1 relative bg-black rounded-xl overflow-hidden mb-8'>
           {/* Browser header bar */}
           <div className='absolute top-0 left-0 right-0 h-12 bg-gray-900 border-b border-gray-700 flex items-center px-4 z-10'>
             <div className='flex items-center gap-2'>
@@ -244,43 +241,35 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* Right side - Project cards (1/3 width) */}
-        <div className='w-1/3 h-full bg-gray-50 dark:bg-gray-900 border-l border-gray-200 dark:border-gray-700 flex flex-col'>
-          {/* Header */}
-          <div className='p-6 border-b border-gray-200 dark:border-gray-700'>
-            <h2 className='text-2xl font-bold text-gray-900 dark:text-white mb-2'>
-              Featured Projects
-            </h2>
-            <p className='text-gray-600 dark:text-gray-400 text-sm'>
-              Select a project to preview
-            </p>
-          </div>
-
-          {/* Project cards */}
-          <div className='flex-1 overflow-y-auto p-4 space-y-4'>
-            {projects.map((project, index) => (
-              <div
-                key={project.id}
-                className={`transform transition-all duration-500 ${
-                  isVisible
-                    ? 'translate-x-0 opacity-100'
-                    : 'translate-x-8 opacity-0'
-                }`}
-                style={{
-                  animationDelay: `${index * 100}ms`,
-                }}
-              >
-                <ProjectCard
-                  project={project}
-                  isSelected={selectedProject?.id === project.id}
-                  onClick={() => handleProjectSelect(project)}
-                />
-              </div>
-            ))}
+        {/* Bottom section - Project cards */}
+        <div className='bg-gray-50 dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700'>
+          {/* Project cards grid */}
+          <div className='p-6'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+              {projects.map((project, index) => (
+                <div
+                  key={project.id}
+                  className={`transform transition-all duration-500 ${
+                    isVisible
+                      ? 'translate-y-0 opacity-100'
+                      : 'translate-y-8 opacity-0'
+                  }`}
+                  style={{
+                    animationDelay: `${index * 100}ms`,
+                  }}
+                >
+                  <ProjectCard
+                    project={project}
+                    isSelected={selectedProject?.id === project.id}
+                    onClick={() => handleProjectSelect(project)}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Footer info */}
-          <div className='p-4 border-t border-gray-200 dark:border-gray-700 bg-gray-100/50 dark:bg-gray-800/50'>
+          <div className='px-6 pb-4'>
             <div className='text-center text-xs text-gray-500 dark:text-gray-400 font-mono'>
               {projects.length} projects • Interactive preview
             </div>
