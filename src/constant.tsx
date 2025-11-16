@@ -17,21 +17,21 @@ export const skills: Skill[] = [
   {
     name: 'React',
     score: 4,
-    favorite: true,
+    favorite: false,
     category: 'Frontend',
     icon: `${DEVICON_BASE_URL}/react/react-original.svg`,
   },
   {
     name: 'TypeScript',
     score: 3,
-    favorite: true,
+    favorite: false,
     category: 'Language',
     icon: `${DEVICON_BASE_URL}/typescript/typescript-original.svg`,
   },
   {
     name: 'Python',
     score: 4,
-    favorite: true,
+    favorite: false,
     category: 'Language',
     icon: `${DEVICON_BASE_URL}/python/python-original.svg`,
   },
@@ -192,7 +192,7 @@ export const skills: Skill[] = [
   {
     name: 'Full-Stack Development',
     score: 4,
-    favorite: true,
+    favorite: false,
     category: 'Methodology',
     icon: `${DEVICON_BASE_URL}/react/react-original.svg`, // Using React as proxy
   },
@@ -251,6 +251,20 @@ export const skills: Skill[] = [
     favorite: false,
     category: 'language',
     icon: `${DEVICON_BASE_URL}/scala/scala-original.svg`,
+  },
+  {
+    name: 'FastAPI',
+    score: 3,
+    favorite: false,
+    category: 'Backend',
+    icon: `${DEVICON_BASE_URL}/fastapi/fastapi-original.svg`,
+  },
+  {
+    name: 'ExpressJS',
+    score: 3,
+    favorite: false,
+    category: 'Backend',
+    icon: `${DEVICON_BASE_URL}/express/express-original.svg`,
   },
 ];
 
