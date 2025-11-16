@@ -1,7 +1,0 @@
-{
-  "capGemini": {
-    "type": "CDI",
-    "role": "Ingénieur de données",
-    "description": "Development of an ETL pipeline upstream of the application of an IA model to isolate energy consumption. Model result displayed on web application . Team of three peoples in agile SCRUM ( English )."
-  }
-}

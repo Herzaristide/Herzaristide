@@ -1,13 +1,32 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'tailwindcss';
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 body {
-  font-family: "Montserrat", sans-serif;
-  width: 100dvw; /* dvw solve the scrollbar dimension problem */
+  font-family: 'Montserrat', sans-serif;
+  width: 100dvw;
   overflow-x: hidden;
+  /* overscroll-behavior: none;
+  scroll-behavior: auto; */
 }
+
+/* html {
+  scroll-behavior: auto;
+}
+
+html,
+body {
+  overflow-anchor: none;
+}
+
+#wrapper {
+  overflow: hidden;
+}
+
+#content {
+  overflow: visible;
+} */
 
 @theme {
   /* --color-green: #e5800e; */
@@ -15,11 +34,115 @@ body {
   --color-black: #282828;
 }
 
-:root::-webkit-scrollbar {
+/* :root::-webkit-scrollbar {
   display: none;
 }
 
 :root {
   scrollbar-width: none;
   -ms-overflow-style: none;
+} */
+
+/* Custom animations for Skills section */
+/* @keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(83, 221, 117, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(83, 221, 117, 0.4);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+} */
+
+/* 3D Flip Animation Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Auto-scroll animation for skills */
+@keyframes scroll-slow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-slow {
+  animation: scroll-slow 30s linear infinite;
+}
+
+.animate-scroll-slow:hover {
+  animation-play-state: paused;
+}
+
+/* Smooth transitions for all interactive elements */
+/* * {
+  transition-property: color, background-color, border-color,
+    text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+} */
