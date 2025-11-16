@@ -266,6 +266,13 @@ export const skills: Skill[] = [
     category: 'Backend',
     icon: `${DEVICON_BASE_URL}/express/express-original.svg`,
   },
+  {
+    name: 'WebSocket',
+    score: 3,
+    favorite: false,
+    category: 'Backend',
+    icon: `${DEVICON_BASE_URL}/websocket/websocket-original.svg`,
+  },
 ];
 
 export const contactsUrl: ContactUrls = {

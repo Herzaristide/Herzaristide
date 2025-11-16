@@ -50,6 +50,6 @@ export const iconMap: Record<string, string> = {
   tailwind: tailwindIcon,
 };
 
-export const getIcon = (iconName: string): string | null => {
-  return iconMap[iconName] || null;
+export const getIcon = (iconName: string): string | undefined => {
+  return iconMap[iconName] || undefined;
 };

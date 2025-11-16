@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 
 // Project data
 const projects = [
@@ -189,7 +188,6 @@ const ProjectCard = ({
 };
 
 const Projects = () => {
-  const { t } = useTranslation();
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [isVisible, setIsVisible] = useState(false);
 

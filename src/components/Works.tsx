@@ -53,6 +53,7 @@ const TimelineItemComponent = ({
 
   return (
     <div
+      id={`work-${mission.id}`}
       ref={itemRef}
       className={`relative flex ${
         isLeft ? 'justify-start' : 'justify-end'
@@ -211,6 +212,7 @@ const TimelineItemComponent = ({
 const Works = () => {
   const { t } = useTranslation();
   const timelineRef = useRef<HTMLDivElement>(null);
+  const hasAutoScrolledRef = useRef(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [flipped, setFlipped] = useState<number | null>(null);
 
@@ -273,6 +275,71 @@ const Works = () => {
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Read URL query/hash to auto-scroll to a specific work on initial load only
+  useEffect(() => {
+    const findAndScroll = () => {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        let target = params.get('work') || params.get('w') || '';
+
+        if (!target) {
+          // try hash (support #work-id or #id)
+          const h = window.location.hash || '';
+          if (h.startsWith('#')) target = h.slice(1);
+        }
+
+        if (!target || hasAutoScrolledRef.current) return;
+
+        // normalize target
+        const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9_-]/g, '');
+
+        // if numeric, try index (support 1-based and 0-based)
+        let idx = -1;
+        if (/^\d+$/.test(target)) {
+          const n = parseInt(target, 10);
+          if (n >= 1 && n <= allMissions.length)
+            idx = n - 1; // treat as 1-based
+          else if (n >= 0 && n < allMissions.length) idx = n; // 0-based fallback
+        }
+
+        if (idx === -1) {
+          // try to match mission id or normalized name
+          const t = norm(target.replace(/^work-/, ''));
+          idx = allMissions.findIndex((m) => {
+            if (!m.id) return false;
+            const ids = [m.id, m.name || '']
+              .map((x) => String(x || '').toLowerCase())
+              .map((s) => s.replace(/[^a-z0-9_-]/g, ''));
+            return ids.includes(t);
+          });
+        }
+
+        if (idx >= 0 && idx < allMissions.length) {
+          const id = `work-${allMissions[idx].id}`;
+          const el = document.getElementById(id);
+          // expand the panel for that item
+          setFlipped(idx);
+          // scroll to element after a short delay so layout has settled
+          setTimeout(() => {
+            if (el) {
+              el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              hasAutoScrolledRef.current = true; // Mark as auto-scrolled to prevent future auto-scrolls
+            }
+          }, 500);
+        }
+      } catch (e) {
+        // ignore parsing errors
+      }
+    };
+
+    // run on mount with delay to ensure DOM elements are ready
+    const timer = setTimeout(() => {
+      findAndScroll();
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [allMissions]);
 
   return (
     <section id='works' className='relative min-h-screen py-20'>
