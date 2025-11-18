@@ -172,16 +172,25 @@
       "company": "Orange",
       "role": "Ingénieur de données",
       "location": "Brest",
-      "start_date": "08/2023",
+      "start_date": "09/2023",
       "end_date": "04/2025",
-      "context": "Maintenance et amélioration d'un data center.",
+      "context": "Maintenance et optimisation de plusieurs pipelines, systèmes de stockage et dispositifs de sécurité pour un très grand volume de données mobiles. Le projet visait à garantir un accès fiable aux données, leur intégrité et leur protection, tout en permettant leur exploitation efficace pour les analyses et la prise de décision au sein de l’entreprise, avec une adaptation continue des pipelines selon les besoins des équipes clientes et le rétablissement rapide des flux en cas d’incidents.",
+      "descriptions": "Gestion opérationnelle d’un data center avec de fortes contraintes de volumétrie et de performance. Le projet consistait à superviser et stabiliser l’ensemble des pipelines de traitement pour assurer la continuité des flux, minimiser les interruptions et répondre efficacement aux situations d’urgence, tout en optimisant la capacité de traitement et la fiabilité globale des systèmes.",
       "tasks": [
-        "Développement et déploiement de pipelines de données mobiles.",
-        "Migration vers le cloud.",
-        "Équipe de trois personnes en agile KAMBAN.",
-        "Maintenance et amélioration d'un pipeline ETL pour le traitement de données mobiles."
+        "Rétablissement urgent des flux de données en cas d'incident.",
+        "Amélioration et modernisation des pipelines pour renforcer leur stabilité et leur performance.",
+        "Formatage et structuration des données pour garantir leur qualité et leur cohérence.",
+        "Résolution d'incidents liés aux pipelines et aux systèmes de stockage.",
+        "Supervision continue des flux et des performances des pipelines.",
+        "Gestion et sécurisation du stockage des données massives.",
+        "Évolution des pipelines en fonction des besoins des équipes clientes.",
+        "Documentation des processus et des flux de données.",
+        "Mise en place d’indicateurs de suivi et de tableaux de bord pour monitorer l’activité.",
+        "Coordination avec les équipes clientes pour comprendre les besoins et prioriser les évolutions.",
+        "Analyse des anomalies récurrentes afin de prévenir de futurs incidents.",
+        "Participation à l’amélioration des procédures d’intervention en urgence."
       ],
-      "skills": ["Flink", "Hadoop", "Kafka", "Spark", "Git", "Gcp", "Scala"]
+      "skills": ["Flink", "Hadoop", "Kafka", "Spark", "Git", "GCP", "Scala"]
     },
     {
       "name": "Atawey",
@@ -193,10 +202,14 @@
       "context": "comprendre et anticiper la consommation électrique d’une borne de recharge pour véhicules à hydrogène, en prenant en compte les variations liées à l’utilisation réelle, aux conditions environnementales et aux spécificités techniques de la borne. L’objectif est de disposer de données fiables pour améliorer l’efficacité énergétique, optimiser les coûts d’exploitation et soutenir le développement de modèles prédictifs capables d’analyser et d’estimer la consommation dans différentes conditions.",
       "description": "Conception et mise en place d’un pipeline de traitement de données en Python, destiné à collecter, nettoyer et structurer les données issues des bornes de recharge. Le pipeline prépare les informations nécessaires à l’entraînement d’un modèle de machine learning capable d’estimer et d’analyser la consommation électrique selon différents paramètres. Il assure un traitement fiable et continu des flux, garantissant des données exploitables pour des analyses précises et des décisions optimisées en matière de gestion énergétique.",
       "tasks": [
-        "Développement d'une application web pour la visualisation de données.",
-        "Équipe de trois personnes en agile SCRUM.",
-        "Communication en anglais.",
-        "Développement d'un pipeline ETL avant l'application d'un modèle d'IA chargé d'isoler la consommation énergétique d'une station de recharge de voiture à hydrogène."
+        "Développement du pipeline de traitement de données en Python pour collecter, nettoyer et structurer les données des bornes de recharge.",
+        "Déploiement et maintenance du pipeline en environnement de production.",
+        "Réflexion sur le formatage et la structuration des données pour l'entraînement du modèle de machine learning.",
+        "Optimisation du stockage et des formats de données pour améliorer l'efficacité et la performance.",
+        "Développement d'une interface utilisateur pour visualiser et interagir avec les données, et consulter les résultats des modèles.",
+        "Traitement et analyse des données pour préparer des datasets exploitables.",
+        "Tests et évaluation de différentes technologies pour identifier les solutions les plus adaptées.",
+        "Gestion des différents datasets des bornes."
       ],
       "skills": [
         "backend",
@@ -220,10 +233,15 @@
       "context": "Nécessité de traiter de gros volumes de données issus des routeurs de réseau mobile, avec des contraintes strictes de temporalité, de vitesse de traitement et de stockage, afin d’assurer une exploitation fiable et rapide des informations réseaus.",
       "description": "Mise en place d’un pipeline de traitement de données modulable et scalable, capable de gérer de grands volumes de flux en temps réel. Chaque composant du pipeline assure une étape spécifique : collecte, transformation, validation et stockage des données, permettant un traitement continu, fiable et optimisé pour répondre aux contraintes de temporalité et de volumétrie.",
       "tasks": [
-        "Développement et déploiement d'un pipeline de données soumis à des contraintes de vitesse et de volume.",
-        "Architecture de solution de données.",
-        "Veille technologique et tests de performance.",
-        "Équipe de cinq personnes en agile SCRUM."
+        "Conception et développement de briques fonctionnelles assurant l’ingestion, la transformation et le stockage des données.",
+        "Containerisation des composants pour un déploiement modulaire et facilement maintenable.",
+        "Configuration et optimisation du réseau des microservices pour assurer une communication fiable et sécurisée.",
+        "Réalisation de tests de performance, de scalabilité et d’architecture avec différentes technologies pour identifier une configuration optimale.",
+        "Optimisation des flux de données en temps réel pour répondre aux contraintes strictes de temporalité et de volumétrie.",
+        "Collaboration et documentation technique, pour faciliter la maintenance et extension du pipeline ainsi que des briques fonctionnelles.",
+        "Mise en place de pipelines CI/CD pour automatiser les tests, builds et déploiements, garantissant la fiabilité et la rapidité des mises en production.",
+        "Amélioration continue des pipelines et de l’architecture pour optimiser performances, scalabilité et résilience.",
+        "Mise en place de mécanismes de sécurité pour garantir la confidentialité et l’intégrité des données manipulées."
       ],
       "skills": [
         "kafka",
@@ -243,12 +261,17 @@
       "location": "ronchin",
       "start_date": "10/2019",
       "end_date": "02/2020",
-      "context": "Développement d'une interface de gestion d'inventaire multiplateforme.",
+      "context": "Nécessité de moderniser le suivi des produits en magasin, d’optimiser la disponibilité des articles et de fluidifier les flux de marchandises. Le projet s’inscrivait dans une démarche de digitalisation des processus logistiques pour réduire les erreurs et améliorer l’efficacité opérationnelle.",
+      "descriptions": "Réalisée par une équipe d’une vingtaine de personnes, l’application permet de consulter les niveaux de stock par produit et magasin, de gérer les entrées et sorties, d’envoyer des alertes sur les seuils critiques et d’assurer la synchronisation sécurisée des données avec les systèmes centraux, tout en proposant une interface intuitive adaptée aux différents appareils utilisés en magasin.",
       "tasks": [
-        "Développement d'une application de gestion d'inventaire multiplateforme.",
-        "Adaptation des modèles aux besoins métier.",
-        "Équipe de vingt personnes en agile SCRUM.",
-        "Développement d'une interface de gestion d'inventaire multiplateforme."
+        "Recueil et analyse des besoins métiers auprès des équipes opérationnelles.",
+        "Conception et développement des interfaces frontend de l’application, en garantissant leur ergonomie et leur réactivité.",
+        "Mise en place de la cohérence visuelle et respect de l’expérience utilisateur sur l’ensemble de l’application.",
+        "Intégration et synchronisation avec les systèmes de gestion des stocks existants.",
+        "Ajout de nouvelles fonctionnalités et évolution de l’application selon les besoins métiers.",
+        "Tests fonctionnels et techniques pour assurer la qualité et la fiabilité des fonctionnalités développées.",
+        "Participation aux choix techniques et aux revues de code pour maintenir des standards de qualité élevés.",
+        "Optimisation des performances frontend et résolution des incidents techniques sur l’application."
       ],
       "skills": ["dart", "flutter", "frontend", "git"]
     }
